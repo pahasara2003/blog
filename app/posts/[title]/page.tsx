@@ -63,7 +63,6 @@ const Page = (Url: any) => {
           <article className="lg:prose-lg ">
             <Markdown
               className={"min-w-[300px] max-w-full "}
-              children={result.content}
               // components={{
               //   code(props) {
               //     const { children, className, node, ...rest } = props;
@@ -84,7 +83,9 @@ const Page = (Url: any) => {
               //     );
               //   },
               // }}
-            />
+            >
+              {result.content}
+            </Markdown>
           </article>
         </div>
       </div>
