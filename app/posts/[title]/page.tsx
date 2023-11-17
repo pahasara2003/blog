@@ -64,26 +64,26 @@ const Page = (Url: any) => {
             <Markdown
               className={"min-w-[300px] max-w-full "}
               children={result.content}
-              components={{
-                code(props) {
-                  const { children, className, node, ...rest } = props;
-                  const match = /language-(\w+)/.exec(className || "");
-                  return match ? (
-                    <SyntaxHighlighter
-                      {...rest}
-                      PreTag="div"
-                      children={String(children).replace(/\n$/, "")}
-                      language={match[1]}
-                      style={oneDark}
-                      className="text-xl min-w-[70vw]"
-                    />
-                  ) : (
-                    <code {...rest} className={className}>
-                      {children}
-                    </code>
-                  );
-                },
-              }}
+              // components={{
+              //   code(props) {
+              //     const { children, className, node, ...rest } = props;
+              //     const match = /language-(\w+)/.exec(className || "");
+              //     return match ? (
+              //       <SyntaxHighlighter
+              //         {...rest}
+              //         PreTag="div"
+              //         children={String(children).replace(/\n$/, "")}
+              //         language={match[1]}
+              //         style={oneDark}
+              //         className="text-xl min-w-[70vw]"
+              //       />
+              //     ) : (
+              //       <code {...rest} className={className}>
+              //         {children}
+              //       </code>
+              //     );
+              //   },
+              // }}
             />
           </article>
         </div>
