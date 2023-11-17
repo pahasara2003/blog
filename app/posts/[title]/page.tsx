@@ -34,6 +34,7 @@ const Page = (Url: any) => {
     <div className="py-5 flex flex-col items-center ">
       <Image
         src={`/images/${result.data.thumbnail}`}
+        alt={result.data.title}
         className="rounded-none  w-[100vw] md:w-[70vw]  mx-auto mb-5  object-bottom h-[500px] object-cover"
       />
       <div className="w-[75%]">
