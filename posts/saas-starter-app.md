@@ -9,28 +9,23 @@ tags:
     { text: "python", tag: "python" },
     { text: "animejs", tag: "Js" },
   ]
+
 ---
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+print("hellow world...")
+```
+
+
 
 The [SaaS (software as a service)](https://en.wikipedia.org/wiki/Software_as_a_service) model underpins many of today's successful new businesses. Knowing how to build one from start to finish is probably a useful addition to any software developer's skill set.
 
 But even when you strip a SaaS product of its business logic, there's still a non-trivial amount of work and trade-offs to consider.
 
 In this project, my goal was to build a fully serverless SaaS web-app with authentication and payments — the two vital organs of any business.
-
-My implementation is opinionated (as you'll see), and intended to serve as a starting point for new SaaS ideas in the future. Here's what's included:
-
-- [Authentication](#authentication)
-- [Payments (Stripe)](#payments-stripe)
-- [Frontend (React)](#frontend-react)
-- [Backend API](#backend-api)
-- [Serverless architecture](#serverless-architecture)
-- [Infrastructure as code](#infrastructure-as-code)
-- [CRUD operations](#crud-operations)
-- [Lessons Learnt](#lessons-learnt)
-
-You can view the example at https://saas-starter-stack.com/app/ and the source on [GitHub](https://github.com/pixegami/saas-starter). In this post, I'll be reflecting on my choices and experience for each of the above features.
-
-### Authentication
 
 **Don't roll your own auth!** It's hard, and mistakes can be devastating to a business. With that said, I did it anyway — mostly to learn from it. Here's also some [discussion on Hackernews](https://news.ycombinator.com/item?id=22001918) on why you might want to build your own auth.
 

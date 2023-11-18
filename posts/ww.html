@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <title>&quot;Building a serverless SaaS product&quot;</title>
+  </head>
+  <body>
+    <pre><code class='language-python' lang='python'>import numpy as np
+import matplotlib.pyplot as plt
+
+print(&quot;hellow world...&quot;)
+</code></pre>
+    <p>&nbsp;</p>
+    <p>
+      The
+      <a href="https://en.wikipedia.org/wiki/Software_as_a_service"
+        >SaaS (software as a service)</a
+      >
+      model underpins many of today&#39;s successful new businesses. Knowing how
+      to build one from start to finish is probably a useful addition to any
+      software developer&#39;s skill set.
+    </p>
+    <p>
+      But even when you strip a SaaS product of its business logic, there&#39;s
+      still a non-trivial amount of work and trade-offs to consider.
+    </p>
+    <p>
+      In this project, my goal was to build a fully serverless SaaS web-app with
+      authentication and payments — the two vital organs of any business.
+    </p>
+    <p>
+      My implementation is opinionated (as you&#39;ll see), and intended to
+      serve as a starting point for new SaaS ideas in the future. Here&#39;s
+      what&#39;s included:
+    </p>
+    <ul>
+      <li><a href="#authentication">Authentication</a></li>
+      <li><a href="#payments-stripe">Payments (Stripe)</a></li>
+      <li><a href="#frontend-react">Frontend (React)</a></li>
+      <li><a href="#backend-api">Backend API</a></li>
+      <li><a href="#serverless-architecture">Serverless architecture</a></li>
+      <li><a href="#infrastructure-as-code">Infrastructure as code</a></li>
+      <li><a href="#crud-operations">CRUD operations</a></li>
+      <li><a href="#lessons-learnt">Lessons Learnt</a></li>
+    </ul>
+    <p>
+      You can view the example at
+      <a href="https://saas-starter-stack.com/app/" target="_blank" class="url"
+        >https://saas-starter-stack.com/app/</a
+      >
+      and the source on
+      <a href="https://github.com/pixegami/saas-starter">GitHub</a>. In this
+      post, I&#39;ll be reflecting on my choices and experience for each of the
+      above features.
+    </p>
+    <h3 id="authentication">Authentication</h3>
+    <p>
+      <strong>Don&#39;t roll your own auth!</strong> It&#39;s hard, and mistakes
+      can be devastating to a business. With that said, I did it anyway — mostly
+      to learn from it. Here&#39;s also some
+      <a href="https://news.ycombinator.com/item?id=22001918"
+        >discussion on Hackernews</a
+      >
+      on why you might want to build your own auth.
+    </p>
+    <p>
+      I used
+      <a href="https://codahale.com/how-to-safely-store-a-password/">bcrypt</a>
+      and <a href="https://jwt.io/">JSON Web Tokens</a>, and stored credentials
+      on DynamoDB. That part wasn&#39;t so bad. The real grind came from
+      building things like exponential back-offs for failed attempts, account
+      verification and reset mechanisms, and patching all the security edge
+      cases.
+    </p>
+    <p>
+      I got it to a roughly working state, and then called it a day. If this was
+      a production system, I&#39;d probably look into something like
+      <a href="https://aws.amazon.com/cognito/">Cognito</a>,
+      <a href="https://firebase.google.com/products/auth">Firebase</a> or
+      <a href="https://www.okta.com/">Okta</a>.
+    </p>
+    <h3 id="payments-stripe">Payments (Stripe)</h3>
+    <p>
+      From payments integration, <a href="https://stripe.com">Stripe</a> was an
+      easy choice. No prominent alternative come to mind, and I&#39;ve heard
+      high praises about Stripe&#39;s developer onboarding experience.
+    </p>
+    <p>
+      I set up
+      <a href="https://stripe.com/en-au/billing">subscription payment</a>
+      integration with the project, and I think the developer experience lives
+      up to expectations. The tutorials were well structured and concise.
+    </p>
+    <p>
+      But the little thing that impressed me the most was when I typed in
+      &#39;test card&#39; in a
+      <a href="https://stripe.com/docs/testing">search box</a>, it actually just
+      straight up gave me a card-number I could copy straight to my clipboard.
+      Whoever thought of that just saved me a click, and I&#39;m grateful.
+    </p>
+    <h3 id="frontend-react">Frontend (React)</h3>
+    <p>
+      The frontend is a responsive web-app build with
+      <a href="https://reactjs.org/">React</a>. It seems like React is still the
+      dominant technology is the area, although I&#39;ve yet to try its main
+      competitors like <a href="https://vuejs.org/">Vue</a> or
+      <a href="https://svelte.dev/">Svelte</a>.
+    </p>
+    <p>
+      I used <a href="https://tailwindcss.com/">TailWindCSS</a> for styling, and
+      prefer to anything I&#39;ve tried in the past (Boostrap CSS, Semantic UI
+      and just vanilla CSS).
+    </p>
+    <p>
+      I then used <a href="https://www.gatsbyjs.com/">Gatsby</a> to optimize the
+      static site rendering — but I&#39;m not sure if the extra steps are worth
+      it at this stage. It&#39;s better for SEO and performance, but costs extra
+      development cycles.
+    </p>
+    <p>
+      Overall though, I was quite satisfied with this stack for the frontend,
+      and would be happy to use it for production.
+    </p>
+    <h3 id="backend-api">Backend API</h3>
+    <p>
+      The backend is a serverless REST API implemented in Python and hosted as
+      <a href="https://aws.amazon.com/lambda/">Lambda functions</a> behind API
+      Gateway.
+    </p>
+    <p>
+      My main challenge here was to abstract away the lower level things (like
+      CORS, HTTP response formatting, database access) as much as possible. I
+      did this via
+      <a
+        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"
+        >Lambda layers</a
+      >, which allowed me to group a bunch of Python packages and common scripts
+      together.
+    </p>
+    <p>
+      This allowed me to implement handlers that are quite short and readable,
+      which is think is key to maintainability.
+    </p>
+    <h3 id="serverless-architecture">Serverless architecture</h3>
+    <p>
+      Why serverless? I think for a lot of businesses it simply wins out from a
+      cost and scaling perspective. I could probably serve north of 500k API
+      requests for
+      <a href="https://aws.amazon.com/lambda/pricing/">less than a dollar</a>.
+    </p>
+    <p>
+      However, this implies that the choice of database must be serverless as
+      well. I chose <a href="https://aws.amazon.com/dynamodb/">DynamoDB</a> just
+      for the ease of integration. But if I had different data modeling requires
+      (for which the DynamoDB architecture might be unfit), I might look into
+      <a href="https://aws.amazon.com/rds/aurora/">Aurora</a> or
+      <a href="https://fauna.com/">Fauna</a>.
+    </p>
+    <h3 id="infrastructure-as-code">Infrastructure as code</h3>
+    <p>
+      Configuring infrastructure is time-consuming and error prone. If I want to
+      be able to deploy a copy of this service quickly, I&#39;d have to
+      <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code"
+        >model it as code (IaC)</a
+      >. In keeping theme with my AWS integration so far, I&#39;ve modeled this
+      project with
+      <a href="https://docs.aws.amazon.com/cdk/latest/guide/home.html"
+        >AWS CDK</a
+      >
+      in Typescript.
+    </p>
+    <p>
+      With this the entire frontend and backend can be deployed to a brand new
+      account or domain in less than 30 minutes with just a
+      <a
+        href="https://github.com/pixegami/saas-starter/blob/master/saas-infrastructure/service.config.json"
+        >few configuration changes</a
+      >.
+    </p>
+    <h3 id="crud-operations">CRUD operations</h3>
+    <p>
+      Finally, I&#39;ve added some simple Twitter-like posting capabilities to
+      the project just as a stub for the actual business logic. It has ways to
+      interact with the authentication API, and find out whether a user is
+      verified, and if they are a paying subscriber.
+    </p>
+    <h2 id="closing-thoughts">Closing Thoughts</h2>
+    <p>
+      Honestly, I&#39;m so tired of this project already. It was a lot more
+      complex than I expected — especially for an app that really doesn&#39;t do
+      <em>anything</em>! But I did learn a lot along the way though, and will
+      probably be faster the second time around.
+    </p>
+    <p>My top three takeaways are:</p>
+    <ul>
+      <li>Don&#39;t build your own auth.</li>
+      <li>
+        You&#39;ll probably rebuild the project at least once or twice, so
+        design things to be flexible.
+      </li>
+      <li>Having integration tests really paid off.</li>
+    </ul>
+  </body>
+</html>
