@@ -13,7 +13,7 @@ interface tag {
 }
 
 const Page = (Url: any) => {
-  const file = `posts/${Url.params.title}.md`;
+  const file = `./posts/${Url.params.title}.md`;
   const content = fs.readFileSync(file, "utf8");
   const result = matter(content);
   const date = generateMonth(result.data.date);
