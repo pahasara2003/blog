@@ -16,15 +16,22 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    colors: {
+      bg: "#292a2b",
+      white: "#ffffff",
+      fg: "#303233",
+      transparent: "rgba(0,0,0,0)",
+      s1: "#4299E1",
+      s2: "#9F7AEA",
+      gray: "#A0AEC0",
+    },
   },
   plugins: [
     nextui({
+      defaultTheme: "dark",
       themes: {
         light: {
           // ...
-          colors: {
-            secondary: "#37354b",
-          },
         },
         dark: {
           // ...

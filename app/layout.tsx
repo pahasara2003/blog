@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import "@/highlight/styles/default.css";
 
 const poppins = Poppins({ weight: ["300", "600"], subsets: ["latin"] });
 
@@ -17,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} min-h-[100vh]`}>
+      <body className={`${poppins.className}  bg-bg min-h-[100vh]`}>
         {children}
-        <footer className=" p-3  w-full text-black text-center">
+        <footer className=" p-5  w-full bg-fg text-[0.8rem] text-center">
           {" "}
           &copy; Pahasara Wickramasinghe {new Date().getFullYear()}
         </footer>

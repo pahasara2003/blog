@@ -9,14 +9,13 @@ interface props {
 const Icon = ({ tag, text }: props) => {
   const images: any = {};
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex gap-2 items-center">
       <Image
         alt={text}
         src={`/icons/${tag}.png`}
-        width={20}
-        className="rounded-none"
+        className="rounded-none w-[20px] md:w-[20px] "
       />
-      <span className="text-sm font-bold text-gray-500">{text}</span>
+      <span className="text-sm  tracking-widest text-white">{text}</span>
     </div>
   );
 };

@@ -45,7 +45,7 @@ const BlogContainer = ({ postMetaData }: Props) => {
         <Input
           placeholder="Search Blog posts ..."
           size="sm"
-          className="max-w-[400px] "
+          className="max-w-[400px]"
           ref={input}
           onKeyUp={(e: any) => {
             if (e.target.value === "") {

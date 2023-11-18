@@ -1,7 +1,5 @@
 import fs from "fs";
-import Markdown from "react-markdown";
 import matter from "gray-matter";
-import getMetaData from "@/components/getMetaData";
 import { generateMonth } from "@/components/generateTime";
 import { Image } from "@nextui-org/react";
 import { FaRegCalendarAlt } from "react-icons/fa";
@@ -31,10 +29,10 @@ const Page = (Url: any) => {
         className="rounded-none  w-[100vw] md:w-[70vw]  mx-auto mb-5  object-bottom h-[500px] object-cover"
       />
       <div className="w-[75%]">
-        <h1 className="font-bold py-10 text-black w-full text-[2.2rem] md:text-[3rem] text-center">
+        <h1 className="font-bold py-5 text-transparent bg-gradient-to-r tracking-wider from-s1 to-s2 bg-clip-text w-full text-[2rem] md:text-[2.5rem] text-center">
           {result.data.title}
         </h1>
-        <hr />
+        <hr className="bg-gray h-[0.5px]" />
         <div className="p-3 flex w-full flex-wrap gap-3 justify-evenly">
           <p className="flex gap-3 items-center">
             <FaRegCalendarAlt />
@@ -50,10 +48,10 @@ const Page = (Url: any) => {
             })}
           </div>
         </div>
-        <hr className="mb-10" />
+        <hr className="bg-gray h-[1px]" />
 
         <div className=" flex flex-col items-center">
-          <Renderer html={result.content} />
+          <Renderer html={c} />
         </div>
       </div>
     </div>
