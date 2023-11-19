@@ -6,19 +6,29 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import Icon from "@/components/Icons";
 import "@/highlight/styles/monokai.css";
 import Renderer from "@/components/Renderer";
+import getMetaData from "@/components/getMetaData";
 
 interface tag {
   text: string;
   tag: string;
 }
 
+export function generateStaticParams() {
+  const posts = getMetaData();
+  return [
+    {
+      title: "qr-code-micro-app",
+    },
+  ];
+}
+
 const Page = (Url: any) => {
-  const file = `./posts/${Url.params.title}.md`;
-  const content = fs.readFileSync(file, "utf8");
+  const file = `posts/${Url.params.title}.md`;
+  const content = fs.readFileSync(file);
   const result = matter(content);
   const date = generateMonth(result.data.date);
 
-  const File = `posts/${Url.params.title}.html`;
+  const File = `./posts/${Url.params.title}.html`;
   const c = fs.readFileSync(File, "utf8");
 
   return (

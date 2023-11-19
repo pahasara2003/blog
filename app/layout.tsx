@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+// import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({ weight: ["300", "600"], subsets: ["latin"] });
+// const poppins = Poppins({ weight: ["300", "600"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pahasara's Blog",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}  bg-bg min-h-[100vh]`}>
+      <body className={` bg-bg min-h-[100vh]`}>
         {children}
         <footer className=" p-5  w-full bg-fg text-[0.8rem] text-center">
           {" "}

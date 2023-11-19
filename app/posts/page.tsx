@@ -1,6 +1,15 @@
 import getMetaData from "@/components/getMetaData";
 import BlogContainer from "@/components/BlogContainer";
 
+export function generateStaticParams() {
+  const posts = getMetaData();
+  return [
+    {
+      title: "gpt-3-generated-poetry",
+    },
+  ];
+}
+
 const Page = () => {
   let postMetaData = getMetaData();
   postMetaData = postMetaData.sort(
