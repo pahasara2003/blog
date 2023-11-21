@@ -37,7 +37,7 @@ const BlogCard = ({
 
   return (
     <Link href={`/posts/${slug}`}>
-      <Card className="py-4 w-[300px] bg-fg  rounded-sm shadow-xl shado-[#242527]">
+      <Card className="py-4 w-[300px] hover:ring-1 duration-400 ring-s2 dark:bg-fg  rounded-sm shadow-xl shado-[#242527]">
         <CardHeader className="pb-0 pt-2 px-4 h-[90px] flex-col items-start">
           <p className="text-tiny uppercase font-bold">{time}</p>
           <h4 className="font-bold text-xl py-2">{title}</h4>
@@ -50,7 +50,7 @@ const BlogCard = ({
           />
         </CardBody>
         <CardBody>
-          <p className="text-default-500 h-[100px]  after:inset-0 relative after:absolute after:bg-gradient-to-b from-transparent overflow-hidden to-fg">
+          <p className="text-default-500 h-[100px]  after:inset-0 relative after:absolute after:bg-gradient-to-b from-transparent overflow-hidden dark:to-fg to-white">
             {description}
           </p>
         </CardBody>

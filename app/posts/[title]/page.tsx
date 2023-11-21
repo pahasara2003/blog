@@ -1,10 +1,10 @@
 import fs from "fs";
+import cheerio from "cheerio";
 import matter from "gray-matter";
 import { generateMonth } from "@/components/generateTime";
 import { Image } from "@nextui-org/react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import Icon from "@/components/Icons";
-import "@/highlight/styles/monokai.css";
 import Renderer from "@/components/Renderer";
 import getMetaData from "@/components/getMetaData";
 
@@ -13,14 +13,14 @@ interface tag {
   tag: string;
 }
 
-export function generateStaticParams() {
-  const posts = getMetaData();
-  return [
-    {
-      title: "qr-code-micro-app",
-    },
-  ];
-}
+// export function generateStaticParams() {
+//   const posts = getMetaData();
+//   return [
+//     {
+//       title: "qr-code-micro-app",
+//     },
+//   ];
+// }
 
 const Page = (Url: any) => {
   const file = `posts/${Url.params.title}.md`;
@@ -28,11 +28,11 @@ const Page = (Url: any) => {
   const result = matter(content);
   const date = generateMonth(result.data.date);
 
-  const File = `./posts/${Url.params.title}.html`;
-  const c = fs.readFileSync(File, "utf8");
+  // const File = `./posts/${Url.params.title}.html`;
+  // const c = fs.readFileSync(File, "utf8");
 
   return (
-    <div className="py-5 flex flex-col items-center ">
+    <div className="py-5 flex flex-col items-center bg-white ">
       <Image
         src={`/images/${result.data.thumbnail}`}
         alt={result.data.title}
@@ -61,7 +61,7 @@ const Page = (Url: any) => {
         <hr className="bg-gray h-[1px]" />
 
         <div className=" flex flex-col items-center">
-          <Renderer html={c} />
+          <Renderer html={result.content} />
         </div>
       </div>
     </div>

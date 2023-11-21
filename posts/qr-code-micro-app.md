@@ -12,21 +12,30 @@ tags:
 ---
 
 Ever since the pandemic started, I've noticed QR codes creeping into my daily life. Venue check-ins, digital menus at restaurants, and online payments.
+
 $$
 \int_1^{25}f(x)dx
 $$
 
-```python
+```javascript
 
 # uuid is a built-in Python library to generate random IDs with, with low chance of collision.
-qr_id = uuid.uuid4().hex[:12]
-qr_tag = f"qr-{qr_id}"
+let v = createVector(1, 0);
 
-# We'll later have to implement this page so that it can load our message with the given tag.
-content = f"https://qr.pixegami.com/view?tag={qr_tag}"
+function setup() {
+  createCanvas(700, 600);
+}
+
+function draw() {
+  background("#292a2b");
+  fill("#9F7AEA");
+  translate(300, 300);
+
+  rectMode(CENTER);
+  circle(v.x, v.y, 80);
+}
+
 ```
-
-
 
 I thought it'd be fun to explore the technology a little bit, so I've built a micro web-app that lets you save messages and view them later using a QR code. Sort of a "Hello World" QR code project.
 

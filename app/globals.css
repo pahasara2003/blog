@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  @apply text-white;
+  @apply dark:text-white;
 }

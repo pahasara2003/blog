@@ -25,7 +25,7 @@ const BlogPageContainer = ({ postMetaData }: Props) => {
   return (
     <NextUIProvider>
       <div className="flex justify-center pb-10 gap-2 items-center"></div>
-      <h1 className="text-[1.3rem] px-10 py-3 font-bold tracking-wide">
+      <h1 className="text-[2rem] px-10 py-3 font-bold tracking-widest">
         Recent Posts
       </h1>
       <hr />

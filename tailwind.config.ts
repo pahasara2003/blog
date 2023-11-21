@@ -8,6 +8,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -24,18 +25,31 @@ const config: Config = {
       s1: "#4299E1",
       s2: "#9F7AEA",
       gray: "#A0AEC0",
+      light: "#f2f2f2",
     },
   },
   plugins: [
     nextui({
-      defaultTheme: "dark",
+      defaultTheme: "light",
+      addCommonColors: true,
+
       themes: {
         light: {
-          // ...
+          colors: {
+            primary: {
+              //... 50 to 900
+              DEFAULT: "#9F7AEA",
+            },
+          },
         },
         dark: {
           // ...
-          colors: {},
+          colors: {
+            primary: {
+              //... 50 to 900
+              DEFAULT: "#9F7AEA",
+            },
+          },
         },
         // ... custom themes
       },

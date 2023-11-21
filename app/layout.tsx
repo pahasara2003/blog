@@ -15,10 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={` bg-bg min-h-[100vh]`}>
+    <html lang="en" className="light">
+      <body className={`bg-light dark:bg-bg min-h-[100vh] `}>
         {children}
-        <footer className=" p-5  w-full bg-fg text-[0.8rem] text-center">
+        <footer className=" p-5  w-full bg-white dark:bg-fg text-[0.8rem] text-center">
           {" "}
           &copy; Pahasara Wickramasinghe {new Date().getFullYear()}
         </footer>

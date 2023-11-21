@@ -41,7 +41,7 @@ const BlogContainer = ({ postMetaData }: Props) => {
 
   return (
     <NextUIProvider>
-      <div className="flex justify-center pb-10 gap-2 items-center">
+      <div className="flex bg-white py-10 rounded-md dark:bg-bg justify-center pb-10 gap-2 items-center">
         <Input
           placeholder="Search Blog posts ..."
           size="sm"
@@ -54,29 +54,22 @@ const BlogContainer = ({ postMetaData }: Props) => {
           }}
         />
         <Button
-          color="danger"
+          className="bg-s2"
           size="lg"
           isIconOnly
           onClick={() => {
             setTerm(input.current !== null ? input.current.value : "");
           }}
         >
-          <HiMagnifyingGlass className="text-xl" />
+          <HiMagnifyingGlass className="text-xl text-white" />
         </Button>
       </div>
-      <hr />
       <div className="w-full flex min-h-[50vh] flex-col items-center">
         <p className="h-20 p-10 font-extrabold uppercase tracking-widest text-2xl">
           {term === "" ? "Recent Posts" : "Search Results"}
         </p>
 
-        <Tabs
-          items={items}
-          aria-label="Tabs colors"
-          radius="full"
-          color="danger"
-          className="m-3"
-        >
+        <Tabs color="primary" items={items} radius="full" className="m-3">
           {(item) => (
             <Tab
               title={`Page ${item.index}`}

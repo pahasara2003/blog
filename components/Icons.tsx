@@ -15,7 +15,7 @@ const Icon = ({ tag, text }: props) => {
         src={`/icons/${tag}.png`}
         className="rounded-none w-[20px] md:w-[20px] "
       />
-      <span className="text-sm  tracking-widest text-white">{text}</span>
+      <span className="text-sm  tracking-widest dark:text-white">{text}</span>
     </div>
   );
 };
