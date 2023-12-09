@@ -1,24 +1,19 @@
-import getMetaData from "@/components/getMetaData";
-import BlogContainer from "@/components/BlogContainer";
+import BlogPage from "@/components/BlogPage";
+import { PrismaClient } from "prisma/prisma-client";
 
-export function generateStaticParams() {
-  const posts = getMetaData();
-  return [
-    {
-      title: "gpt-3-generated-poetry",
-    },
-  ];
-}
+const prisma = new PrismaClient();
 
-const Page = () => {
-  let postMetaData = getMetaData();
+const Page = async () => {
+  let postMetaData = await prisma.posts.findMany();
+  prisma.$disconnect();
+
   postMetaData = postMetaData.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
   return (
     <div className="p-10 w-[100%] ">
-      <BlogContainer postMetaData={postMetaData} />
+      <BlogPage postMetaData={postMetaData} />
     </div>
   );
 };

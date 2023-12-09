@@ -17,7 +17,7 @@ export const generateTime = (date: string) => {
   return out;
 };
 
-export const generateMonth = (date: string) => {
+export const generateMonth = (date: any) => {
   const then = new Date(date);
   const Months = [
     "Jan",

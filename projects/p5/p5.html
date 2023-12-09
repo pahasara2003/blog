@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <style>
+      body {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px"></div>
+
+    <script src="sketch.js"></script>
+    <script src="./p5.js"></script>
+    <script src="./ball.js"></script>
+    <script type="text/javascript">
+      let velocities = [];
+      var count = 0;
+      var t = 0;
+      let balls = [];
+      const delta_t = 0.05;
+      var momenta = 0;
+      let U = 0;
+
+      function setup() {
+        createCanvas(600, 600, WEBGL);
+        describe(
+          "scene with sphere and directional light. The direction of the light is controlled with the mouse position."
+        );
+        for (let i = 0; i < 400; i++) {
+          balls.push(
+            new Ball(
+              240 * (Math.random() - 0.5),
+              240 * (Math.random() - 0.5),
+              240 * (Math.random() - 0.5),
+              i, // v_x
+              400 - i, // v_y
+              200 - i,
+              4, // r
+              16, // m
+              "#9F7AEA"
+            )
+          );
+        }
+      }
+
+      function draw() {
+        velocities = [];
+        U = 0;
+        background(0);
+        orbitControl();
+        noFill();
+        stroke(255);
+        box(300);
+
+        for (ball of balls) {
+          U += 0.5 * ball.mass * ball.v.magSq() * 10 ** -6;
+          velocities.push(ball.v.mag());
+          ball.collide();
+          ball.edge();
+          ball.update();
+        }
+
+        t += delta_t;
+      }
+
+      setInterval(() => {
+        let Data = velocities.map((e) => [e]);
+        Data.unshift(["Data1"]);
+
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable(Data);
+
+          var options = {
+            title: "Approximating Normal Distribution",
+            legend: { position: "none" },
+            colors: ["#4285F4"],
+
+            chartArea: { width: 405 },
+            hAxis: {
+              ticks: [-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1],
+            },
+            bar: { gap: 0 },
+
+            histogram: {
+              bucketSize: 10,
+              maxNumBuckets: 400,
+            },
+          };
+
+          var chart = new google.visualization.Histogram(
+            document.getElementById("chart_div")
+          );
+          chart.draw(data, options);
+
+          console.log(velocities);
+        }
+      }, 100);
+    </script>
+  </body>
+</html>

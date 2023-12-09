@@ -38,7 +38,7 @@ const BlogCard = ({
   return (
     <Link href={`/posts/${slug}`}>
       <Card className="py-4 w-[300px] hover:ring-1 duration-400 ring-s2 dark:bg-fg  rounded-sm shadow-xl shado-[#242527]">
-        <CardHeader className="pb-0 pt-2 px-4 h-[90px] flex-col items-start">
+        <CardHeader className="pb-0 pt-2 px-4 h-[120px] flex-col items-start">
           <p className="text-tiny uppercase font-bold">{time}</p>
           <h4 className="font-bold text-xl py-2">{title}</h4>
         </CardHeader>
@@ -46,7 +46,7 @@ const BlogCard = ({
           <Image
             alt="Card background"
             className=" rounded-none w-[300px] h-[200px] object-cover"
-            src={`/images/${thumbnail}`}
+            src={`https://raw.githubusercontent.com/pahasara2003/${thumbnail}`}
           />
         </CardBody>
         <CardBody>

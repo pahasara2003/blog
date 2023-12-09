@@ -1,55 +1,56 @@
 import fs from "fs";
-import cheerio from "cheerio";
-import matter from "gray-matter";
 import { generateMonth } from "@/components/generateTime";
 import { Image } from "@nextui-org/react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import Icon from "@/components/Icons";
-import Renderer from "@/components/Renderer";
-import getMetaData from "@/components/getMetaData";
+import { PrismaClient } from "prisma/prisma-client";
+import dynamic from "next/dynamic";
+const Renderer = dynamic(() => import("@/components/Renderer"), { ssr: false });
 
 interface tag {
   text: string;
   tag: string;
 }
 
-// export function generateStaticParams() {
-//   const posts = getMetaData();
-//   return [
-//     {
-//       title: "qr-code-micro-app",
-//     },
-//   ];
-// }
+const prisma = new PrismaClient();
 
-const Page = (Url: any) => {
-  const file = `posts/${Url.params.title}.md`;
-  const content = fs.readFileSync(file);
-  const result = matter(content);
-  const date = generateMonth(result.data.date);
+const Page = async (Url: any) => {
+  const data = await prisma.posts.findFirst({
+    where: { slug: Url.params.title },
+  });
 
+  prisma.$disconnect();
+
+  const date = generateMonth(data?.date);
+
+  const res = await fetch(
+    `https://raw.githubusercontent.com/pahasara2003${data?.file}`,
+    { cache: "no-store" }
+  );
+
+  const html = await res.text();
   // const File = `./posts/${Url.params.title}.html`;
   // const c = fs.readFileSync(File, "utf8");
 
   return (
-    <div className="py-5 flex flex-col items-center bg-white ">
+    <div className="py-5 flex flex-col items-center bg-white  dark:bg-bg ">
       <Image
-        src={`/images/${result.data.thumbnail}`}
-        alt={result.data.title}
+        src={`https://raw.githubusercontent.com/pahasara2003/${data?.thumbnail}`}
+        alt={data?.title}
         className="rounded-none  w-[100vw] md:w-[70vw]  mx-auto mb-5  object-bottom h-[500px] object-cover"
       />
       <div className="w-[75%]">
         <h1 className="font-bold py-5 text-transparent bg-gradient-to-r tracking-wider from-s1 to-s2 bg-clip-text w-full text-[2rem] md:text-[2.5rem] text-center">
-          {result.data.title}
+          {data?.title}
         </h1>
-        <hr className="bg-gray h-[0.5px]" />
+        <hr className="text-gray dark:text-fg h-[0.5px]" />
         <div className="p-3 flex w-full flex-wrap gap-3 justify-evenly">
           <p className="flex gap-3 items-center">
             <FaRegCalendarAlt />
             {date}
           </p>
           <div className="flex gap-5  justify-between">
-            {result.data.tags.map((t: tag) => {
+            {data?.tags.map((t: tag) => {
               return (
                 <>
                   <Icon {...t} />
@@ -58,10 +59,10 @@ const Page = (Url: any) => {
             })}
           </div>
         </div>
-        <hr className="bg-gray h-[1px]" />
+        <hr className="text-gray dark:text-fg h-[0.5px]" />
 
         <div className=" flex flex-col items-center">
-          <Renderer html={result.content} />
+          <Renderer html={html} />
         </div>
       </div>
     </div>
