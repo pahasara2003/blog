@@ -4,7 +4,9 @@ const LandingPage = () => {
   return (
     <div className="min-h-[80vh] bg-fg">
       <Navbar />
-      <h1>Hello World</h1>
+      <h1 className="text-[5rem] text-white tracking-wider w-fit p-5 m-auto mt-[100px] bg-s2">
+        {"<Hello World/>"}
+      </h1>
     </div>
   );
 };

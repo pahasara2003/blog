@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav
       className={` 
-       bg-fg gap-10 items-center relative text-[1.2rem] uppercase font-bold tracking-wider pb-5 h-[120px]  flex justify-center p-5 pb-0 text-white`}
+       bg-fg gap-10 items-center relative text-[1.2rem] uppercase font-bold tracking-wider h-[120px]  flex justify-center p-5 pb-0 text-white`}
     >
       <Link
         href={"/"}

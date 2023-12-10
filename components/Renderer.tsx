@@ -1,5 +1,4 @@
 "use client";
-import "../app/stackedit.css";
 
 interface props {
   html: string;
@@ -7,7 +6,7 @@ interface props {
 
 const Renderer = ({ html }: props) => {
   return (
-    <div className="min-w-[90vw]">
+    <div className="min-w-[80vw] bg-white ">
       <article
         className="prose-lg prose-headings:font-bold"
         dangerouslySetInnerHTML={{ __html: html }}

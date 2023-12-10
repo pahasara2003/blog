@@ -1,10 +1,10 @@
-import fs from "fs";
 import { generateMonth } from "@/components/generateTime";
 import { Image } from "@nextui-org/react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import Icon from "@/components/Icons";
 import { PrismaClient } from "prisma/prisma-client";
 import dynamic from "next/dynamic";
+
 const Renderer = dynamic(() => import("@/components/Renderer"), { ssr: false });
 
 interface tag {
@@ -39,17 +39,17 @@ const Page = async (Url: any) => {
         alt={data?.title}
         className="rounded-none  w-[100vw] md:w-[70vw]  mx-auto mb-5  object-bottom h-[500px] object-cover"
       />
-      <div className="w-[75%]">
-        <h1 className="font-bold py-5 text-transparent bg-gradient-to-r tracking-wider from-s1 to-s2 bg-clip-text w-full text-[2rem] md:text-[2.5rem] text-center">
+      <div className="w-[70vw]">
+        <h1 className="font-bolder py-5 text-bg font-sans w-full text-[2rem] md:text-[2.5rem] text-center">
           {data?.title}
         </h1>
         <hr className="text-gray dark:text-fg h-[0.5px]" />
-        <div className="p-3 flex w-full flex-wrap gap-3 justify-evenly">
-          <p className="flex gap-3 items-center">
+        <div className=" flex w-full flex-wrap gap-3 justify-evenly">
+          <p className="flex text-sm font-bold gap-3 items-center">
             <FaRegCalendarAlt />
             {date}
           </p>
-          <div className="flex gap-5  justify-between">
+          <div className="flex gap-5 font-sans  justify-between">
             {data?.tags.map((t: tag) => {
               return (
                 <>
@@ -61,7 +61,7 @@ const Page = async (Url: any) => {
         </div>
         <hr className="text-gray dark:text-fg h-[0.5px]" />
 
-        <div className=" flex flex-col items-center">
+        <div className=" flex flex-col pt-[50px] items-center">
           <Renderer html={html} />
         </div>
       </div>

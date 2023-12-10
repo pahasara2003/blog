@@ -27,6 +27,9 @@ const config: Config = {
       gray: "#A0AEC0",
       light: "#f2f2f2",
     },
+    fontFamily: {
+      sans: ["Helvetica", "Arial", "sans-serif"],
+    },
   },
   plugins: [
     nextui({
