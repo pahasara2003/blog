@@ -46,7 +46,7 @@ const BlogHeader = ({ data, date }: any) => {
         <Divider className="mb-10" />
       </div>
       <Image
-        src={`http://localhost:3000/${data?.thumbnail}`}
+        src={`https://pahasara.byte-burst.xyz/${data?.thumbnail}`}
         alt={data?.title}
         className="rounded-none  w-full  mx-auto mb-5  object-bottom  object-cover"
       />
