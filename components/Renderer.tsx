@@ -6,11 +6,13 @@ interface props {
 
 const Renderer = ({ html }: props) => {
   return (
-    <div className="min-w-[80vw] bg-white ">
-      <article
-        className="prose-lg prose-headings:font-bold"
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></article>
+    <div className="md:w-[70vw] bg-white ">
+      <script
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML"
+      ></script>
+
+      <article dangerouslySetInnerHTML={{ __html: html }}></article>
     </div>
   );
 };

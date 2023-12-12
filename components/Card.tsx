@@ -46,7 +46,7 @@ const BlogCard = ({
           <Image
             alt="Card background"
             className=" rounded-none w-[300px] h-[200px] object-cover"
-            src={`https://raw.githubusercontent.com/pahasara2003/${thumbnail}`}
+            src={`https://pahasara.byte-burst.xyz/${thumbnail}`}
           />
         </CardBody>
         <CardBody>

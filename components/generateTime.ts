@@ -34,7 +34,7 @@ export const generateMonth = (date: any) => {
     "Dec",
   ];
   let out =
-    then.getDate() + " " + Months[then.getMonth()] + "  " + then.getFullYear();
+    then.getDate() + " " + Months[then.getMonth()] + " " + then.getFullYear();
 
   return out;
 };

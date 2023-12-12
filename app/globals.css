@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  @apply dark:text-white;
-}
-
 p {
   @apply text-[1.2rem] py-4;
+}
+
+@font-face {
+  font-family: "Nue";
+  src: url(HelveticaNeue-Black.otf);
 }

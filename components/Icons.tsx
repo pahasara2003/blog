@@ -9,7 +9,7 @@ interface props {
 const Icon = ({ tag, text }: props) => {
   const images: any = {};
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-2 h-full items-center">
       <Image
         alt={text}
         src={`/icons/${tag}.png`}

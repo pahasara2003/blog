@@ -45,7 +45,7 @@ const BlogPage = ({ postMetaData }: Props) => {
         <Input
           placeholder="Search Blog posts ..."
           size="sm"
-          className="max-w-[400px]"
+          className="md:max-w-[400px] max-w-[200px]"
           ref={input}
           onKeyUp={(e: any) => {
             if (e.target.value === "") {
@@ -65,7 +65,7 @@ const BlogPage = ({ postMetaData }: Props) => {
         </Button>
       </div>
       <div className="w-full flex min-h-[50vh] flex-col items-center">
-        <p className="h-20 p-10 font-extrabold uppercase tracking-widest text-2xl">
+        <p className="h-20 p-10 m-1 font-extrabold uppercase tracking-widest text-2xl">
           {term === "" ? "Recent Posts" : "Search Results"}
         </p>
 

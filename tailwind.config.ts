@@ -29,6 +29,7 @@ const config: Config = {
     },
     fontFamily: {
       sans: ["Helvetica", "Arial", "sans-serif"],
+      Headers: ["Nue", "sans-serif"],
     },
   },
   plugins: [
