@@ -18,9 +18,9 @@ const BlogHeader = ({ data, date }: any) => {
         <Breadcrumbs isDisabled size="lg" className="px-2">
           {data.file.split("/").map((e: any, index: any) => {
             if (data.file.split("/").length > index + 1) {
-              return <BreadcrumbItem>{e}</BreadcrumbItem>;
+              return <BreadcrumbItem key={index}>{e}</BreadcrumbItem>;
             } else {
-              return <BreadcrumbItem>{data.slug}</BreadcrumbItem>;
+              return <BreadcrumbItem key={index}>{data.slug}</BreadcrumbItem>;
             }
           })}
         </Breadcrumbs>
@@ -34,10 +34,10 @@ const BlogHeader = ({ data, date }: any) => {
             {date}
           </p>
           <div className="flex gap-10 px-10 font-sans  justify-evenly">
-            {data?.tags.map((t: tag) => {
+            {data?.tags.map((t: tag, index: any) => {
               return (
                 <>
-                  <Icon {...t} />
+                  <Icon key={index} {...t} />
                 </>
               );
             })}
