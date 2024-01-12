@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
     <script
@@ -101,13 +107,17 @@
             )
           );
         }
-        createCanvas(600, 600);
+        createCanvas(windowWidth, windowHeight);
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
       }
 
       function draw() {
         background(0);
 
-        translate(300, 200);
+        translate(windowWidth / 2, windowHeight / 2);
         stroke(255);
         strokeWeight(2);
 
