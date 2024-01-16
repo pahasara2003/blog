@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"
+      integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let P = [];
+
+      const delta_t = 0.000000001;
+      const g = 90000000000000000.8;
+
+      class pendulum {
+        constructor(theta_1, theta_2) {
+          this.r = Math.random() * 255;
+          this.g = Math.random() * 255;
+          this.b = Math.random() * 255;
+
+          this.theta_1 = theta_1;
+          this.omega_1 = 0;
+          this.alpha_1 = 0;
+          this.m1 = 1;
+          this.l1 = 100;
+
+          this.theta_2 = theta_2;
+          this.omega_2 = 0;
+          this.alpha_2 = 0;
+          this.m2 = 1;
+          this.l2 = 100;
+
+          this.x = [];
+          this.y = [];
+        }
+
+        update() {
+          let theta = this.theta_2 - this.theta_1;
+          let mu = this.m2 / this.m1;
+          let a1 = (1 + mu) * this.l1;
+          let b1 = mu * this.l2 * Math.cos(theta);
+          let c1 =
+            -mu * this.l2 * Math.sin(theta) * this.omega_2 ** 2 +
+            (1 + mu) * g * Math.sin(this.theta_1);
+
+          let a2 = this.l1 * Math.cos(theta);
+          let b2 = this.l2;
+          let c2 =
+            +this.l1 * Math.sin(theta) * this.omega_1 ** 2 +
+            g * Math.sin(this.theta_2);
+
+          this.alpha_1 = (c2 * b1 - c1 * b2) / (a1 * b2 - a2 * b1);
+          this.alpha_2 = (c1 * a2 - c2 * a1) / (a1 * b2 - a2 * b1);
+
+          this.omega_1 += this.alpha_1 * delta_t;
+          this.theta_1 += this.omega_1 * delta_t;
+
+          this.omega_2 += this.alpha_2 * delta_t;
+          this.theta_2 += this.omega_2 * delta_t;
+        }
+
+        show() {
+          stroke(this.r, this.g, this.b);
+          let X1 = this.l1 * Math.sin(this.theta_1);
+          let Y1 = this.l1 * Math.cos(this.theta_1);
+          line(0, 0, X1, Y1);
+
+          let X2 = X1 + this.l2 * Math.sin(this.theta_2);
+          let Y2 = Y1 + this.l2 * Math.cos(this.theta_2);
+          line(X1, Y1, X2, Y2);
+
+          this.x.push(X2);
+          this.y.push(Y2);
+
+          beginShape(POINTS);
+          noFill();
+          for (let i = 0; i < this.x.length; i++) {
+            vertex(this.x[i], this.y[i]);
+          }
+          endShape();
+
+          if (this.x.length > 200) {
+            this.x.shift();
+            this.y.shift();
+          }
+        }
+      }
+
+      function setup() {
+        for (let i = 0; i < 4; i++) {
+          P.push(
+            new pendulum(
+              PI / 2 + Math.random() * 0.01,
+              Math.random() * 0.01 + PI / 2
+            )
+          );
+        }
+        createCanvas(600, 600);
+        frameRate(100);
+      }
+
+      function keyPressed() {
+        if (key === "s") {
+          saveGif("mySketch", 10);
+        }
+      }
+
+      function draw() {
+        background(0);
+
+        translate(300, 300);
+        stroke(255);
+        strokeWeight(2);
+
+        for (let i = 0; i < 4; i++) {
+          P[i].update();
+          P[i].show();
+        }
+      }
+    </script>
+  </body>
+</html>
