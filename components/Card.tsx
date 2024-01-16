@@ -50,7 +50,7 @@ const BlogCard = ({
           />
         </CardBody>
         <CardBody>
-          <p className="text-default-500 h-[100px]  after:inset-0 relative after:absolute after:bg-gradient-to-b from-transparent overflow-hidden dark:to-fg to-white">
+          <p className="text-default-500 h-[100px] text-[0.8rem]  after:inset-0 relative after:absolute after:bg-gradient-to-b from-transparent overflow-hidden dark:to-fg to-white">
             {description}
           </p>
         </CardBody>
