@@ -13,7 +13,7 @@ interface tag {
 
 const BlogHeader = ({ data, date }: any) => {
   return (
-    <div className="max-w-[950px] px-2 pt-10">
+    <div className="w-[80vw] lg:w-[60vw] px-2 pt-10">
       <div>
         <Breadcrumbs isDisabled size="lg" className="px-2">
           {data.file.split("/").map((e: any, index: any) => {
@@ -45,11 +45,6 @@ const BlogHeader = ({ data, date }: any) => {
         </div>
         <Divider className="mb-10" />
       </div>
-      <Image
-        src={`https://pahasara.byte-burst.xyz/${data?.thumbnail}`}
-        alt={data?.title}
-        className="rounded-none  w-full  mx-auto mb-5  object-bottom  object-cover"
-      />
     </div>
   );
 };
