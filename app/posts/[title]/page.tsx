@@ -14,11 +14,11 @@ const Page = async (Url: any) => {
   const date = generateMonth(data?.date);
 
   return (
-    <div className="py-5 flex flex-col items-center bg-white  dark:bg-bg ">
+    <div className="py-5 flex flex-col overflow-hidden items-center bg-white  dark:bg-bg ">
       <BlogHeader data={data} date={date} />
       <iframe
         src={`${process.env.HOST}/${data?.file}`}
-        className="w-[100%] h-[300vh]"
+        className="w-[100%] h-[590vh] overflow-hidden"
       ></iframe>
     </div>
   );
