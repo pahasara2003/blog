@@ -49,8 +49,8 @@ const BlogCard = ({
             src={`https://pahasara.byte-burst.xyz/${thumbnail}`}
           />
         </CardBody>
-        <CardBody>
-          <p className="text-default-500 h-[100px] text-[0.8rem]  after:inset-0 relative after:absolute after:bg-gradient-to-b from-transparent overflow-hidden dark:to-fg to-white">
+        <CardBody className="py-0">
+          <p className="p-0 text-default-500 h-[100px] text-[0.9rem]  after:inset-0 relative after:absolute after:bg-gradient-to-b from-transparent overflow-hidden dark:to-fg to-white">
             {description}
           </p>
         </CardBody>

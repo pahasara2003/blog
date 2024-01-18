@@ -19,7 +19,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      let P = [];
+      let Pendulums = [];
 
       const delta_t = 0.000000001;
       const g = 90000000000000000.8;
@@ -100,7 +100,7 @@
 
       function setup() {
         for (let i = 0; i < 4; i++) {
-          P.push(
+          Pendulums.push(
             new pendulum(
               PI / 2 + Math.random() * 0.01,
               Math.random() * 0.01 + PI / 2
@@ -111,12 +111,6 @@
         frameRate(100);
       }
 
-      function keyPressed() {
-        if (key === "s") {
-          saveGif("mySketch", 10);
-        }
-      }
-
       function draw() {
         background(0);
 
@@ -125,8 +119,8 @@
         strokeWeight(2);
 
         for (let i = 0; i < 4; i++) {
-          P[i].update();
-          P[i].show();
+          Pendulums[i].update();
+          Pendulums[i].show();
         }
       }
     </script>
