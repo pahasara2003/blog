@@ -1,11 +1,25 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect, createContext, useContext } from "react";
 import { Slider } from "@nextui-org/react";
 
 import React from "react";
 import Sketch from "react-p5";
 import p5Types from "p5"; //Import this for typechecking and intellisense
 import p5 from "p5"; //Import this for typechecking and intellisense
+
+const IsClientCtx = createContext(false);
+
+export const IsClientCtxProvider = ({ children }) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => setIsClient(true), []);
+  return (
+    <IsClientCtx.Provider value={isClient}>{children}</IsClientCtx.Provider>
+  );
+};
+
+export function useIsClient() {
+  return useContext(IsClientCtx);
+}
 
 interface ComponentProps {
   size: number;
@@ -123,9 +137,11 @@ const Scene = () => {
 
 const page = () => {
   return (
-    <div className="bg-fg h-[800px] flex justify-center  m-auto ">
-      <Scene />;
-    </div>
+    <IsClientCtxProvider>
+      <div className="bg-fg h-[800px] flex justify-center  m-auto ">
+        <Scene />;
+      </div>{" "}
+    </IsClientCtxProvider>
   );
 };
 
