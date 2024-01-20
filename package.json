@@ -13,6 +13,7 @@
     "@nextui-org/react": "^2.2.9",
     "@nextui-org/table": "^2.0.28",
     "@prisma/client": "^5.7.0",
+    "@react-three/fiber": "^8.15.14",
     "animejs": "^3.2.1",
     "cheerio": "^1.0.0-rc.12",
     "crypto": "^1.0.1",
@@ -27,9 +28,11 @@
     "react-icons": "^4.12.0",
     "react-latex-next": "^2.2.0",
     "react-markdown": "^9.0.1",
+    "react-p5": "^1.4.1",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-katex": "^7.0.0",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
