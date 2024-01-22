@@ -12,6 +12,8 @@
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
     "@nextui-org/table": "^2.0.28",
+    "@p5-wrapper/next": "^1.0.2",
+    "@p5-wrapper/react": "^4.3.2",
     "@prisma/client": "^5.7.0",
     "@react-three/fiber": "^8.15.14",
     "animejs": "^3.2.1",

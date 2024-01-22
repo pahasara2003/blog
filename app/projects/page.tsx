@@ -1,148 +1,230 @@
 "use client";
-import { useRef, useState, useEffect, createContext, useContext } from "react";
-import { Slider } from "@nextui-org/react";
 
-import React from "react";
-import Sketch from "react-p5";
-import p5Types from "p5"; //Import this for typechecking and intellisense
-import p5 from "p5"; //Import this for typechecking and intellisense
+import { useState, useEffect } from "react";
+import { NextReactP5Wrapper } from "@p5-wrapper/next";
+import GravityPlayGround from "@/Sketchs/GravityPlayGround";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Divider,
+  Link,
+  Button,
+  Chip,
+  Input,
+} from "@nextui-org/react";
 
-const IsClientCtx = createContext(false);
+import { FaPlay, FaPause } from "react-icons/fa";
+import {
+  Table,
+  TableHeader,
+  TableColumn,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@nextui-org/react";
 
-export const IsClientCtxProvider = ({ children }) => {
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => setIsClient(true), []);
+interface props {
+  play: number;
+  data: data;
+  setData: any;
+}
+interface data {
+  mass: number[];
+  velocity: number[][];
+  position: number[][];
+  color: string[];
+}
+
+const Details = ({ play, data, setData }: props) => {
+  console.log(data);
   return (
-    <IsClientCtx.Provider value={isClient}>{children}</IsClientCtx.Provider>
+    <Table className="text-center">
+      <TableHeader>
+        <TableColumn>Object</TableColumn>
+        <TableColumn>Mass</TableColumn>
+        <TableColumn className="text-center">Initial Position</TableColumn>
+        <TableColumn className="text-center">Initial Velocity</TableColumn>
+      </TableHeader>
+      <TableBody>
+        {data.mass.map((e, i) => {
+          return (
+            <TableRow key={i}>
+              <TableCell>
+                <div
+                  className={`rounded-full w-5 h-5 bg-[${data.color[i]}]`}
+                ></div>
+              </TableCell>
+              <TableCell>
+                <Input
+                  isDisabled={play % 2 === 0}
+                  size="sm"
+                  className="w-[4rem]  text-center"
+                  defaultValue={e.toString()}
+                  onKeyUp={(e: any) => {
+                    setData((prevState: data) => ({
+                      ...prevState,
+                      mass: prevState.mass.map((m, j) =>
+                        j === i ? parseInt(e.target.value) : m
+                      ),
+                    }));
+                  }}
+                />
+              </TableCell>
+              <TableCell>
+                <div className="flex items-center">
+                  <Input
+                    isDisabled={play % 2 === 0}
+                    size="sm"
+                    className="w-[4rem]  text-center"
+                    defaultValue={data.position[i][0].toFixed(0)}
+                    onKeyUp={(e: any) => {
+                      setData((prevState: data) => ({
+                        ...prevState,
+                        position: prevState.position.map((m, j) =>
+                          j === i ? [parseInt(e.target.value), m[1]] : m
+                        ),
+                      }));
+                    }}
+                  />
+                  <span className="mx-2 text-sm">x</span>
+                  <Input
+                    isDisabled={play % 2 === 0}
+                    size="sm"
+                    className="w-[4rem]  text-center"
+                    defaultValue={data.position[i][1].toFixed(0)}
+                    onKeyUp={(e: any) => {
+                      setData((prevState: data) => ({
+                        ...prevState,
+                        position: prevState.position.map((m, j) =>
+                          j === i ? [m[0], parseInt(e.target.value)] : m
+                        ),
+                      }));
+                    }}
+                  />{" "}
+                  <span className="mx-2 text-sm">y</span>
+                </div>
+              </TableCell>
+              <TableCell>
+                <div className="flex items-center">
+                  <Input
+                    isDisabled={play % 2 === 0}
+                    size="sm"
+                    className="w-[4rem]  text-center"
+                    defaultValue={data.velocity[i][0].toFixed(2)}
+                    onKeyUp={(e: any) => {
+                      setData((prevState: data) => ({
+                        ...prevState,
+                        velocity: prevState.velocity.map((m, j) =>
+                          j === i ? [parseInt(e.target.value), m[1]] : m
+                        ),
+                      }));
+                    }}
+                  />
+                  <span className="mx-2 text-sm">
+                    V<sub>x</sub>
+                  </span>
+                  <Input
+                    isDisabled={play % 2 === 0}
+                    size="sm"
+                    className="w-[4rem]  text-center"
+                    defaultValue={data.velocity[i][1].toFixed(2)}
+                    onKeyUp={(e: any) => {
+                      setData((prevState: data) => ({
+                        ...prevState,
+                        velocity: prevState.velocity.map((m, j) =>
+                          j === i ? [m[0], parseInt(e.target.value)] : m
+                        ),
+                      }));
+                    }}
+                  />{" "}
+                  <span className="mx-2 text-sm">
+                    V<sub>y</sub>
+                  </span>
+                </div>
+              </TableCell>
+            </TableRow>
+          );
+        })}
+      </TableBody>
+    </Table>
   );
 };
 
-export function useIsClient() {
-  return useContext(IsClientCtx);
-}
+export default function Page() {
+  const [play, setState] = useState(1);
 
-interface ComponentProps {
-  size: number;
-}
-
-class particle {
-  position: p5.Vector;
-  velocity: p5.Vector;
-  acc: p5.Vector;
-  mass: number;
-  radius: number;
-
-  constructor(
-    position: number[],
-    velocity: number[],
-    acc: number[],
-    mass: number,
-    p: p5
-  ) {
-    this.position = p.createVector(position[0], position[1]);
-    this.velocity = p.createVector(velocity[0], velocity[1]);
-    this.acc = p.createVector(acc[0], acc[1]);
-    this.mass = mass;
-    this.radius = p.sqrt(this.mass) * 2;
-  }
-
-  attractTo(neighbor: particle, p: p5) {
-    let force = p5.Vector.sub(this.position, neighbor.position);
-    let distanceSq = p.constrain(force.magSq(), 100, 1000);
-    let G = 1;
-    let strength = (G * (this.mass * neighbor.mass)) / distanceSq;
-    force.setMag(strength);
-    neighbor.applyForce(force);
-  }
-
-  applyForce(force: p5.Vector) {
-    this.acc.set(force.x / this.mass, force.y / this.mass);
-  }
-
-  update(p: p5) {
-    this.velocity.add(this.acc);
-    this.position.add(this.velocity);
-    this.acc.set(0, 0);
-  }
-
-  draw(p: p5) {
-    p.noStroke();
-    p.fill(255);
-    p.ellipse(this.position.x, this.position.y, this.radius * 2);
-  }
-}
-
-let A: particle;
-let B: particle;
-let C: particle;
-
-let Particles: particle[] = [];
-let limit = 0.5;
-
-const Scene = () => {
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(600, 600).parent(canvasParentRef);
-    A = new particle([0, 0], [0, 0, 0], [0, 0], 100, p5);
-    B = new particle([150, 0], [0, 0, 0], [0, 0], 100, p5);
-    C = new particle([0, 150], [0, 0, 0], [0, 0], 100, p5);
-    let f = 30;
-    for (let i = 0; i < 500; i++) {
-      let x = Math.floor(i / 20) - 7;
-      let y = (i % 15) - 7;
-      Particles.push(new particle([i - 250, -80], [0, 2, 0], [0, 0], 0.2, p5));
-    }
+  const InitialData = {
+    mass: [130, 30, 2],
+    velocity: [
+      [0, 1.35],
+      [0, -5.5],
+      [0, -4.95],
+    ],
+    position: [
+      [0, 0],
+      [170, 0],
+      [200, 0],
+    ],
+    color: ["#f1a04d", "#65a8db", "#ffffff"],
   };
 
-  const draw = (p5: p5Types) => {
-    p5.background("#303233");
-    p5.translate(p5.width / 2, p5.height / 2);
+  const [data, setData] = useState(() => InitialData);
 
-    for (let i = 0; i < 500; i++) {
-      // for (let j = 0; j < 200; j++) {
-      //   Particles[i].attractTo(Particles[j], p5);
-      // }
-
-      A.attractTo(Particles[i], p5);
-      // B.attractTo(Particles[i], p5);
-      // C.attractTo(Particles[i], p5);
-
-      // Particles[i].attractTo(A, p5);
-      // Particles[i].attractTo(B, p5);
-      // Particles[i].attractTo(C, p5);
-
-      Particles[i].update(p5);
-      Particles[i].draw(p5);
-    }
-
-    // A.attractTo(B, p5);
-    // B.attractTo(A, p5);
-
-    // A.attractTo(C, p5);
-    // B.attractTo(C, p5);
-
-    // C.attractTo(B, p5);
-    // C.attractTo(A, p5);
-
-    // A.update(p5);
-    // B.update(p5);
-    // C.update(p5);
-
-    A.draw(p5);
-    // B.draw(p5);
-    // C.draw(p5);
-  };
-
-  return <Sketch setup={setup} draw={draw} />;
-};
-
-const page = () => {
   return (
-    <IsClientCtxProvider>
-      <div className="bg-fg h-[800px] flex justify-center  m-auto ">
-        <Scene />;
-      </div>{" "}
-    </IsClientCtxProvider>
+    <div className="bg-fg  min-h-screen flex-wrap flex items-center justify-center">
+      <Card className="dark bg-bg shadow-none w-[700px] my-5 h-fit">
+        <CardHeader className="flex justify-evenly py-[2rem]">
+          <h1
+            onClick={() => {
+              setData({
+                mass: [300, 30, 2],
+                velocity: [
+                  [0, 1.35],
+                  [0, -5.5],
+                  [0, -4.95],
+                ],
+                position: [
+                  [0, 0],
+                  [170, 0],
+                  [200, 0],
+                ],
+                color: ["#f1a04d", "#65a8db", "#ffffff"],
+              });
+            }}
+            className="text-center tracking-wider text-[1.6rem]"
+          >
+            Gravity Playground
+          </h1>
+          <Button
+            onClick={() => setState((prev) => prev + 1)}
+            radius="full"
+            className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
+          >
+            {play % 2 == 1 ? <FaPlay /> : <FaPause />}
+          </Button>
+        </CardHeader>
+        <Divider />
+        <CardBody>
+          <Details play={play} data={data} setData={setData} />
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Link
+            isExternal
+            showAnchorIcon
+            href="https://github.com/nextui-org/nextui"
+          >
+            Visit source code on GitHub.
+          </Link>
+        </CardFooter>
+      </Card>
+      <NextReactP5Wrapper
+        sketch={GravityPlayGround}
+        InitialData={data}
+        play={play}
+      />
+    </div>
   );
-};
-
-export default page;
+}

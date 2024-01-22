@@ -34,7 +34,7 @@ const config: Config = {
   },
   plugins: [
     nextui({
-      defaultTheme: "light",
+      defaultTheme: "dark",
       addCommonColors: true,
 
       themes: {
@@ -50,7 +50,6 @@ const config: Config = {
           // ...
           colors: {
             primary: {
-              //... 50 to 900
               DEFAULT: "#9F7AEA",
             },
           },
