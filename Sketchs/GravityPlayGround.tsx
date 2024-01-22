@@ -193,6 +193,7 @@ const sketch: Sketch = (p5) => {
     }
 
     COG.div(mass);
+
     p5.fill("#9F7AEA");
     p5.textAlign("center");
     p5.text("COG", COG.x, COG.y + 15);

@@ -53,7 +53,8 @@ const Details = ({ play, data, setData }: props) => {
             <TableRow key={i}>
               <TableCell>
                 <div
-                  className={`rounded-full w-5 h-5 bg-[${data.color[i]}]`}
+                  className={`rounded-full w-5 h-5 `}
+                  style={{ backgroundColor: data.color[i] }}
                 ></div>
               </TableCell>
               <TableCell>
