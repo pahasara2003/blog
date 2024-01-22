@@ -40,7 +40,7 @@ interface data {
 const Details = ({ play, data, setData }: props) => {
   console.log(data);
   return (
-    <Table className="text-center">
+    <Table className="text-center dark">
       <TableHeader>
         <TableColumn>Object</TableColumn>
         <TableColumn>Mass</TableColumn>
