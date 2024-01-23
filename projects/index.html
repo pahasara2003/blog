@@ -8,7 +8,7 @@
   <body>
     <script src="./p5/p5.js"></script>
 
-    <script>
+    <!-- <script>
       let P = [];
 
       const delta_t = 0.000000001;
@@ -111,6 +111,33 @@
           P[i].update();
           P[i].show();
         }
+      }
+    </script> -->
+
+    <script>
+      function setup() {
+        createCanvas(600, 600, WEBGL);
+        describe("a white sphere with black wireframe lines");
+      }
+
+      function draw() {
+        background(0);
+        ambientLight(0, "#f1a04d");
+        shininess(50);
+        pointLight(200, 200, 200, 0, 0, 2250);
+
+        // add point light to showcase specular material
+        pointLight(200, 200, 200, 0, 200, 50);
+        specularMaterial(250);
+        noStroke();
+        fill(255);
+        sphere(40);
+
+        translate(100, 100, 100);
+        specularMaterial(250);
+        noStroke();
+        sphere(40);
+        orbitControl();
       }
     </script>
   </body>

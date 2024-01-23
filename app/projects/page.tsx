@@ -84,7 +84,7 @@ const Details = ({ play, data, setData }: props) => {
                       setData((prevState: data) => ({
                         ...prevState,
                         position: prevState.position.map((m, j) =>
-                          j === i ? [parseInt(e.target.value), m[1]] : m
+                          j === i ? [parseInt(e.target.value), m[1], m[2]] : m
                         ),
                       }));
                     }}
@@ -99,12 +99,27 @@ const Details = ({ play, data, setData }: props) => {
                       setData((prevState: data) => ({
                         ...prevState,
                         position: prevState.position.map((m, j) =>
-                          j === i ? [m[0], parseInt(e.target.value)] : m
+                          j === i ? [m[0], parseInt(e.target.value), m[2]] : m
                         ),
                       }));
                     }}
                   />{" "}
                   <span className="mx-2 text-sm">y</span>
+                  <Input
+                    isDisabled={play % 2 === 0}
+                    size="sm"
+                    className="w-[4rem]  text-center"
+                    defaultValue={data.position[i][2].toFixed(0)}
+                    onKeyUp={(e: any) => {
+                      setData((prevState: data) => ({
+                        ...prevState,
+                        position: prevState.position.map((m, j) =>
+                          j === i ? [m[0], m[1], parseInt(e.target.value)] : m
+                        ),
+                      }));
+                    }}
+                  />{" "}
+                  <span className="mx-2 text-sm">z</span>
                 </div>
               </TableCell>
               <TableCell>
@@ -118,7 +133,7 @@ const Details = ({ play, data, setData }: props) => {
                       setData((prevState: data) => ({
                         ...prevState,
                         velocity: prevState.velocity.map((m, j) =>
-                          j === i ? [parseInt(e.target.value), m[1]] : m
+                          j === i ? [parseInt(e.target.value), m[1], m[2]] : m
                         ),
                       }));
                     }}
@@ -135,13 +150,30 @@ const Details = ({ play, data, setData }: props) => {
                       setData((prevState: data) => ({
                         ...prevState,
                         velocity: prevState.velocity.map((m, j) =>
-                          j === i ? [m[0], parseInt(e.target.value)] : m
+                          j === i ? [m[0], parseInt(e.target.value), m[2]] : m
                         ),
                       }));
                     }}
                   />{" "}
                   <span className="mx-2 text-sm">
                     V<sub>y</sub>
+                  </span>
+                  <Input
+                    isDisabled={play % 2 === 0}
+                    size="sm"
+                    className="w-[4rem]  text-center"
+                    defaultValue={data.velocity[i][2].toFixed(2)}
+                    onKeyUp={(e: any) => {
+                      setData((prevState: data) => ({
+                        ...prevState,
+                        velocity: prevState.velocity.map((m, j) =>
+                          j === i ? [m[0], m[1], parseInt(e.target.value)] : m
+                        ),
+                      }));
+                    }}
+                  />{" "}
+                  <span className="mx-2 text-sm">
+                    V<sub>z</sub>
                   </span>
                 </div>
               </TableCell>
@@ -159,14 +191,14 @@ export default function Page() {
   const InitialData = {
     mass: [130, 30, 2],
     velocity: [
-      [0, 1.35],
-      [0, -5.5],
-      [0, -4.95],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
     ],
     position: [
-      [0, 0],
-      [170, 0],
-      [200, 0],
+      [0, 0, 0],
+      [170, 0, 100],
+      [200, 0, 0],
     ],
     color: ["#f1a04d", "#65a8db", "#ffffff"],
   };
@@ -175,27 +207,9 @@ export default function Page() {
 
   return (
     <div className="bg-fg  min-h-screen flex-wrap flex items-center justify-center">
-      <Card className="dark bg-bg shadow-none w-[700px] my-5 h-fit">
+      <Card className="dark bg-bg shadow-none w-[800px] my-5 h-fit">
         <CardHeader className="flex justify-evenly py-[2rem]">
-          <h1
-            onClick={() => {
-              setData({
-                mass: [300, 30, 2],
-                velocity: [
-                  [0, 1.35],
-                  [0, -5.5],
-                  [0, -4.95],
-                ],
-                position: [
-                  [0, 0],
-                  [170, 0],
-                  [200, 0],
-                ],
-                color: ["#f1a04d", "#65a8db", "#ffffff"],
-              });
-            }}
-            className="text-center tracking-wider text-[1.6rem]"
-          >
+          <h1 className="text-center tracking-wider text-[1.6rem]">
             Gravity Playground
           </h1>
           <Button
