@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pahasara.byte-burst.xyz/
+
+# Sitemaps
+Sitemap: https://pahasara.byte-burst.xyz/sitemap.xml

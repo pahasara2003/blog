@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "next-sitemap": "next-sitemap"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
@@ -25,6 +26,7 @@
     "highlight.js": "^11.9.0",
     "markdown-to-jsx": "^7.3.2",
     "next": "14.0.2",
+    "next-sitemap": "^4.2.3",
     "p5": "^1.8.0",
     "react": "^18",
     "react-dom": "^18",
