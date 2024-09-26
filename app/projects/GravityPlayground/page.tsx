@@ -206,7 +206,7 @@ export default function Page() {
   const [data, setData] = useState(() => InitialData);
 
   return (
-    <div className="bg-fg  min-h-screen flex-wrap flex items-center justify-center">
+    <div className="bg-fg px-3  min-h-screen flex-wrap flex items-center justify-center">
       <Card className="dark bg-bg shadow-none w-[800px] my-5 h-fit">
         <CardHeader className="flex justify-evenly py-[2rem]">
           <h1 className="text-center tracking-wider text-[1.6rem]">

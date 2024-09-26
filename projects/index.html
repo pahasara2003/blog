@@ -115,91 +115,91 @@
     </script> -->
 
     <script>
-      const side = 120;
-      const N = side ** 2;
-      const w = 600 / side;
-      const rows = side;
-      const cols = side;
-
-      function Initialize() {
-        let grid = new Array(cols);
-        for (let i = 0; i < cols; i++) {
-          grid[i] = new Array(rows);
-          for (let j = 0; j < rows; j++) {
-            grid[i][j] = floor(random(2));
-          }
+      class Arrow {
+        constructor(x, y, length, angle) {
+          this.pos = createVector(x, y);
+          this.length = length;
+          this.angle = angle;
         }
-        return grid;
+
+        show() {
+          push();
+          translate(this.pos.x, this.pos.y);
+          stroke(255);
+          strokeWeight(0.7);
+          rotate(-this.angle);
+          if (this.length !== 0) {
+            triangle(this.length, 2, this.length, -2, this.length + 3, 0);
+          } else {
+            circle(0, 0, 2);
+          }
+          line(0, 0, this.length, 0);
+          pop();
+        }
       }
 
-      function updateGrid() {
-        let nextGrid = new Array(cols);
-        for (let i = 0; i < cols; i++) {
-          nextGrid[i] = new Array(rows);
-          for (let j = 0; j < rows; j++) {
-            nextGrid[i][j] = new Array(rows);
+      class VectorPlot {
+        constructor(func, xmin, ymin, xmax, ymax) {
+          this.func = func;
 
-            let state = grid[i][j];
-            let neighbors = countNeighbors(grid, i, j);
+          this.arrows = [];
+          this.xs = [];
+          this.ys = [];
+          this.mags = [];
+          this.angles = [];
 
-            if (state == 0 && neighbors == 3) {
-              nextGrid[i][j] = 1;
-            } else if (state == 1 && (neighbors < 2 || neighbors > 3)) {
-              nextGrid[i][j] = 0;
-            } else {
-              nextGrid[i][j] = state;
+          for (var i = xmin; i <= xmax; i += (-xmin + xmax) / 20) {
+            for (var j = ymin; j <= ymax; j += (-ymin + ymax) / 20) {
+              let X = map(i, xmin, xmax, -280, 280);
+              let Y = map(j, ymin, ymax, -280, 280);
+
+              this.xs.push(X);
+              this.ys.push(Y);
+
+              const out = func(i, j);
+              const vec = createVector(out[0], out[1]);
+              const length = sqrt(vec.mag());
+              const angle = vec.heading();
+
+              this.mags.push(length);
+              this.angles.push(angle);
             }
           }
-        }
-        grid = nextGrid;
-      }
 
-      function countNeighbors(grid, x, y) {
-        let sum = 0;
-        for (let i = -1; i <= 1; i++) {
-          for (let j = -1; j <= 1; j++) {
-            let col = (x + i + cols) % cols;
-            let row = (y + j + rows) % rows;
+          for (var i = 0; i < this.xs.length; i++) {
+            print(min(this.mags));
+            let L = map(this.mags[i], min(this.mags), max(this.mags), 0, 25);
 
-            sum += grid[col][row];
+            this.arrows.push(
+              new Arrow(this.xs[i], this.ys[i], L, this.angles[i])
+            );
           }
         }
-        sum -= grid[x][y];
-        return sum;
-      }
 
-      let resolution = w;
-
-      function displayGrid() {
-        for (let i = 0; i < cols; i++) {
-          for (let j = 0; j < rows; j++) {
-            let x = i * resolution;
-            let y = j * resolution;
-
-            if (grid[i][j] == 1) {
-              fill(255);
-              noStroke();
-
-              rect(x, y, w);
-            }
+        show() {
+          for (var i = 0; i < this.arrows.length; i++) {
+            this.arrows[i].show();
           }
         }
       }
-      let grid;
 
-      function setup() {
-        createCanvas(600, 600);
-        frameRate(20);
-        grid = Initialize();
-      }
+      let plot;
 
-      function draw() {
+      const f = (X, Y) => {
+        const i = Y;
+        const j = Math.sin(X);
+        return [i, -j];
+      };
+
+      setup = () => {
+        plot = new VectorPlot(f, -6, -6, 6, 6);
+        createCanvas(620, 620);
+      };
+      draw = () => {
+        translate(310, 310);
         background(0);
-        noStroke();
-        updateGrid();
-
-        displayGrid();
-      }
+        plot.show();
+      };
     </script>
   </body>
 </html>

@@ -1,12 +1,16 @@
 import Navbar from "@/components/Navbar";
-import Anime from "./Anime";
+import Typing from "@/components/Typing";
 const LandingPage = () => {
   return (
-    <div className="min-h-[80vh] bg-fg">
+    <div
+      className="min-h-screen rounded-sm shadow-xl shadow-bg bg-cover  bg-custom-gradient bg-custom-size bg-custom-position h-screen  "
+      style={{}}
+    >
       <Navbar />
-      <h1 className="md:text-[5rem] text-[2rem] text-white tracking-wider w-fit p-5 m-auto mt-[100px] bg-s2">
-        {"<Hello World/>"}
-      </h1>
+
+      <div className="md:text-[5rem]  text-black font-bold  bg-transparent p-5 m-auto mt-[240px] w-[90vw]">
+        <Typing text={"Coming soon!"} />
+      </div>
     </div>
   );
 };

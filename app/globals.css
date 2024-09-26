@@ -10,3 +10,8 @@ p {
   font-family: "Nue";
   src: url(HelveticaNeue-Black.otf);
 }
+
+@font-face {
+  font-family: "Book";
+  src: url(Book\ Antiqua\ Font.ttf);
+}

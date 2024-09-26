@@ -16,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light">
-      <body className={`bg-light dark:bg-bg min-h-[100vh] `}>
+      <body className={`bg-bg`}>
         {children}
-        <footer className=" py-5  w-[100%]  dark:bg-fg text-[0.8rem] text-center">
+        <footer className=" py-5  w-[100%]  bg-bg text-white text-[0.8rem] text-center">
           {" "}
           &copy; Pahasara Wickramasinghe {new Date().getFullYear()}
         </footer>

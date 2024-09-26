@@ -30,11 +30,13 @@ const sketch: Sketch = (p5) => {
     attractTo(neighbor: particle) {
       let force = this.position.copy();
       force.sub(neighbor.position);
-      let distanceSq = p5.constrain(force.magSq(), 100, 1000);
-      let G = 1;
-      let strength = (G * (this.mass * neighbor.mass)) / distanceSq;
-      force.setMag(strength);
-      neighbor.applyForce(force);
+      if (force.mag() > this.radius + neighbor.radius) {
+        let distanceSq = p5.constrain(force.magSq(), 100, 1000);
+        let G = 1;
+        let strength = (G * (this.mass * neighbor.mass)) / distanceSq;
+        force.setMag(strength);
+        neighbor.applyForce(force);
+      }
     }
 
     applyForce(force: any) {
@@ -198,7 +200,8 @@ const sketch: Sketch = (p5) => {
     p5.push();
     p5.noStroke();
 
-    p5.translate(COG.x, COG.y);
+    p5.translate(COG.x, COG.y, COG.z);
+    p5.emissiveMaterial(255);
     p5.fill("#ffffff");
     p5.box(5);
 

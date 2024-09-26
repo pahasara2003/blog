@@ -3,10 +3,10 @@ import LandingPage from "@/components/LandingPage";
 
 const Page = () => {
   return (
-    <div>
+    <section className="bg-fg p-3">
       <LandingPage />
-      <BlogPanel />
-    </div>
+      {/* <BlogPanel /> */}
+    </section>
   );
 };
 

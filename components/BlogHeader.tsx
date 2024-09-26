@@ -13,7 +13,7 @@ interface tag {
 
 const BlogHeader = ({ data, date }: any) => {
   return (
-    <div className="w-[80vw] lg:w-[60vw]  px-2 pt-5">
+    <div className="w-[80vw] m-auto lg:w-[60vw]  px-2 pt-5">
       <div>
         <Breadcrumbs isDisabled size="lg" className="px-2">
           {data.file.split("/").map((e: any, index: any) => {
