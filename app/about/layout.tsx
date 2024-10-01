@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Read Posts | Pahasara's Blog",
+  title: "About",
   description: "This is my blog",
 };
 export default function RootLayout({

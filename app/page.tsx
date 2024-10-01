@@ -1,5 +1,7 @@
 import BlogPanel from "@/components/BlogPanel";
 import LandingPage from "@/components/LandingPage";
+import Model from "@/components/3DModel";
+import type { Metadata } from "next";
 
 const Page = () => {
   return (
