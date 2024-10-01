@@ -8,10 +8,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://pahasara.byte-burst.xyz/"),
   title: {
-    default: "Pahasara's Blog",
+    default: "Explore the world with Pahasara",
     template: `%s | Pahasara's Blog`,
   },
-  description: "Learn physics and maths with Pahasara.",
+  description:
+    "Explore insightful articles on the fascinating worlds of physics and mathematics. Here, you'll find a collection of my articles, projects, and insights that delve into complex scientific concepts, mathematical theories, and creative 3D designs. Whether you're passionate about unraveling the mysteries of the universe, solving intricate problems, there’s something here for everyone interested in these fields.",
 };
 
 export default function RootLayout({
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light">
+    <html lang="en">
       <body className={`bg-bg`}>
         {children}
         <footer className=" py-5  w-[100%]  bg-bg text-white text-[1rem] text-center">

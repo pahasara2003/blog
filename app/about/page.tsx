@@ -32,7 +32,7 @@ const Page = async () => {
           <br />
           Find me on
         </div>
-        <div className="font-sans my-0  text-light">
+        <div className="font-sans my-0  text-light text-md">
           <a href="https://github.com/pahasara2003">
             <FaGithub className="inline mr-3" />
             pahasara2003

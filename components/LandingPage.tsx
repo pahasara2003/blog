@@ -9,7 +9,7 @@ const LandingPage = () => {
       <Navbar />
 
       <div className="md:text-[5rem]  text-black font-bold  bg-transparent p-5 m-auto mt-[240px] w-[90vw]">
-        <Typing text={"Coming soon!"} />
+        Welcome to my blog...
       </div>
     </div>
   );

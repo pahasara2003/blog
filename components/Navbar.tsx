@@ -18,22 +18,22 @@ const Navbar = () => {
       >
         Home
       </Link>
-      {/* <Link
+      <Link
         href={"/articles"}
         className={`${
           /\bposts/.test(path) && " bg-gradient-to-r from-s1 to-s2"
         } text-center  rounded-md  p-2 text-white`}
       >
         Articles
-      </Link> */}
-      <Link
+      </Link>
+      {/* <Link
         href={"/projects"}
         className={`${
           /\bprojects/.test(path) && "  bg-gradient-to-r from-s1 to-s2"
         }  text-center  rounded-md  p-2 text-white `}
       >
         Projects
-      </Link>
+      </Link> */}
       <Link
         href={"/about"}
         className={`${
