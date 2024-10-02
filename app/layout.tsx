@@ -10,16 +10,8 @@ const articleStructuredData = {
   "@context": "https://schema.org",
   "@type": "Website",
   name: "Pahasara's Blog",
-  author: {
-    "@type": "Person",
-    name: "Pahasara Wickramasinghe",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Pahasara Wickramasinghe",
-  },
   datePublished: "2024-10-02",
-  image: "https://pahasara.byte-burst.xyz/favicon.ico",
+  url: "https://pahasara.byte-burst.xyz",
 };
 
 export const metadata: Metadata = {
