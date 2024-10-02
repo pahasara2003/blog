@@ -4,6 +4,23 @@ import Head from "next/head";
 
 // const poppins = Poppins({ weight: ["300", "600"], subsets: ["latin"] });
 import type { Metadata } from "next";
+import { image } from "@nextui-org/react";
+
+const articleStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Website",
+  name: "Pahasara's Blog",
+  author: {
+    "@type": "Person",
+    name: "Pahasara Wickramasinghe",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Pahasara Wickramasinghe",
+  },
+  datePublished: "2024-10-02",
+  image: "https://pahasara.byte-burst.xyz/favicon.ico",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pahasara.byte-burst.xyz/"),
@@ -22,6 +39,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script type="application/ld+json">
+          {JSON.stringify(articleStructuredData)}
+        </script>
+      </head>
       <body className={`bg-bg`}>
         {children}
         <footer className=" py-5  w-[100%]  bg-bg text-white text-[1rem] text-center">
