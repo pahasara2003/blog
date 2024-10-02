@@ -4,15 +4,6 @@ import Head from "next/head";
 
 // const poppins = Poppins({ weight: ["300", "600"], subsets: ["latin"] });
 import type { Metadata } from "next";
-import { image } from "@nextui-org/react";
-
-const articleStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "Website",
-  name: "Pahasara's Blog",
-  datePublished: "2024-10-02",
-  url: "https://pahasara.byte-burst.xyz",
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pahasara.byte-burst.xyz/"),
@@ -33,7 +24,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script type="application/ld+json">
-          {JSON.stringify(articleStructuredData)}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Website",
+            name: "Pahasara's Blog",
+            datePublished: "2024-10-02",
+            url: "https://pahasara.byte-burst.xyz",
+          })}
         </script>
       </head>
       <body className={`bg-bg`}>
