@@ -11,7 +11,7 @@ const Page = async () => {
         </h1>
         <Image
           as={NextImage}
-          src="/images/about_page_dp.jpg"
+          src="/images/pahasara wickramasinghe.webp"
           alt="Pahasara Wickramasinghe"
           className="duration-1000 "
           shadow="sm"

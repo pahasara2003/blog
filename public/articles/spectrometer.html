@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2197e917c0674f82a9ba1d0ab366c421</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="titlepage">
+<p><strong>ICE 105 – Introduction to Spectrometer</strong></p>
+<p>Lab Report</p>
+<p><strong>I.G.S.P. Wickramasinghe</strong></p>
+<p>2023s20187<br />
+2B<br />
+Tuesday Group</p>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>Prisms and diffraction gratings are commonly used optical instruments
+in physics. The deviations of light rays through prisms and diffraction
+gratings are primarily caused by the properties of propagating waves:
+refraction and diffraction. The purpose of these experiments is to
+determine the index of refraction of a prism and the diffraction
+constant of a diffraction grating.</p>
+<p>In experiment 01, a spectrometer is used to determine the index of
+refraction of a prism for sodium light (<span
+class="math inline">\(\approx589 \hspace{3pt} nm\)</span>). The
+experiment aims to establish the refractive index value by calculating
+the prism angle and the angle of minimum deviation.</p>
+<p>Experiment 02 determines the grating constant using the atomic
+spectrum of mercury. The spectrometer can readily measure the deviation
+of the spectral lines of mercury caused by the grating. With the known
+wavelengths of the spectral lines (436 nm, 546 nm, 577 nm and 579 nm
+<span class="citation" data-cites="hyp"></span>) and the separation
+between the grating slits, the grating constant can be estimated.</p>
+<h1 id="theory">Theory</h1>
+<h2 id="experiment-01">Experiment 01</h2>
+<h3
+id="calculating-the-refractive-index-of-the-prism-material-n">Calculating
+the refractive index of the prism material <span
+class="math inline">\((n)\)</span></h3>
+<p>Refractive index of a material is defined as the ration of speed of
+light in vacuum to that in the material. <span class="math display">\[n
+= \frac{v_{material}}{c}\]</span></p>
+<p>According to the <strong>Snell’s law</strong>, for a given pair of
+media, the ratio of the sines of angle of incidence <span
+class="math inline">\({\displaystyle \theta_{1}}\)</span> and angle of
+refraction <span class="math inline">\(\theta_{2}\)</span> is equal to
+the refractive index of the second medium with regard to the first <span
+class="math inline">\(\displaystyle n_{21}\)</span> which is equal to
+the ratio of the refractive indices <span
+class="math inline">\(\displaystyle {\tfrac {n_{2}}{n_{1}}}\)</span> of
+the two media <span class="citation" data-cites="wikipedia"></span></p>
+<figure>
+<img src="prism.jpeg" alt="Passing of a light ray " />
+<figcaption aria-hidden="true">Passing of a light ray <span
+class="citation" data-cites="image1"></span></figcaption>
+</figure>
+<p>Consider a light ray passing through the prism as shown in Figure 1.
+If the refractive indices of air and prism material are <span
+class="math inline">\(n_a\)</span> and <span
+class="math inline">\(n\)</span> respectively, <span
+class="math display">\[\frac{n}{n_a} = \frac{\sin{i}}{\sin{r_1}}
+=  \frac{\sin{e}}{\sin{r_2}}\]</span> Since <span
+class="math inline">\(n_a\approx1\)</span> this becomes, <span
+class="math display">\[n = \frac{\sin{i}}{\sin{r_1}}
+=  \frac{\sin{e}}{\sin{r_2}}\]</span> Using <span
+class="math inline">\(PMN\Delta\)</span> it is easily shown that, <span
+class="math display">\[P\hat{M}N = \frac{\pi}{2} - r_1
+\hspace{20pt}  \text{and} \hspace{20pt}
+P\hat{N}M = \frac{\pi}{2} - r_2\]</span> Since, <span
+class="math display">\[A + P\hat{M}N + P\hat{N}M = \pi\]</span> <span
+class="math display">\[A = r_1 + r_2\]</span> using <span
+class="math inline">\(OMN \Delta\)</span>, <span
+class="math display">\[\begin{aligned}
+    O\hat{M}N + M\hat{N}O + M\hat{O}N &amp;= \pi \\
+    \therefore (i-r_1) + (e - r_2) + (\pi - D) &amp;= \pi \\
+\end{aligned}\]</span> Thus, <span class="math display">\[i + e = D +
+(r_1 + r_2)\\
+\]</span> From equation (2), <span class="math display">\[r + e = A +
+D\]</span></p>
+<figure>
+<img src="plot.png" alt="A typical D-i curve" />
+<figcaption aria-hidden="true">A typical <span
+class="math inline">\(D-i\)</span> curve</figcaption>
+</figure>
+<p>At <span class="math inline">\(D_{min}\)</span>, <span
+class="math inline">\(i = e\)</span><br />
+From equation (3), <span class="math display">\[i = \frac{A +
+D_{min}}{2}\]</span> From equation (2), <span class="math display">\[r_1
+= \frac{A}{2}\]</span> Finally from (2) and (3), <span
+class="math display">\[n = \frac{\sin{(A +
+D_{min})/2}}{\sin{A/2}}\]</span> Hence, by measuring the angle of
+minimum deviation <span class="math inline">\((D_{min})\)</span> and the
+angle of the prism <span class="math inline">\((D_{min})\)</span>,
+refractive index (n) can be evaluated.</p>
+<h3 id="measuring-the-angle-of-minimum-deviation-d_min">Measuring the
+angle of minimum deviation <span
+class="math inline">\((D_{min})\)</span></h3>
+<figure>
+<img src="dmin.jpg"
+alt="Top view of the prism table indicating the deviated light through the prism. T_0 represents the straight-through position (with no prism on the prism table) and T represents a light ray deviated through a minimum angle (after passing through the prism) " />
+<figcaption aria-hidden="true">Top view of the prism table indicating
+the deviated light through the prism. <span
+class="math inline">\(T_0\)</span> represents the straight-through
+position (with no prism on the prism table) and T represents a light ray
+deviated through a minimum angle (after passing through the prism) <span
+class="citation" data-cites="sec1"></span></figcaption>
+</figure>
+<p>If the left-hand side and right-hand side scale readings at the
+straight-through position are <span
+class="math inline">\(T_{0L}\)</span> and <span
+class="math inline">\(T_{0R}\)</span> and at the minimum deviation,
+<span class="math inline">\(T_{L}\)</span> and <span
+class="math inline">\(T_{R}\)</span> respectively.<br />
+<br />
+Minimum deviation using the left-hand side scale <span
+class="math inline">\(D_L\)</span>, <span class="math display">\[D_L =
+|T_L - T_{0L}|\]</span> and minimum deviation using the right-hand side
+scale <span class="math inline">\(D_R\)</span>, <span
+class="math display">\[D_L = |T_R - T_{0R}|\]</span> Then the angle of
+minimum deviation, <span class="math display">\[D_{min} = \frac{D_L +
+D_R}{2}\]</span></p>
+<h3 id="measuring-the-angle-of-the-prism-a">Measuring the angle of the
+prism <span class="math inline">\((A)\)</span></h3>
+<figure>
+<img src="a.jpg"
+alt="Top view of the prism table when parallel beam of light rays incident on prism. T_1 and T_2 represent the two reflected beams from the corresponding surfaces of the prism " />
+<figcaption aria-hidden="true">Top view of the prism table when parallel
+beam of light rays incident on prism. <span
+class="math inline">\(T_1\)</span> and <span
+class="math inline">\(T_2\)</span> represent the two reflected beams
+from the corresponding surfaces of the prism <span class="citation"
+data-cites="sec1"></span></figcaption>
+</figure>
+<p>By considering Figure (4), if the left-hand side and right-hand side
+scale readings at <span class="math inline">\(T_1\)</span> are <span
+class="math inline">\(T_{1L}\)</span> and <span
+class="math inline">\(T_{1R}\)</span> and at <span
+class="math inline">\(T_2\)</span>, <span
+class="math inline">\(T_{2L}\)</span> and <span
+class="math inline">\(T_{2R}\)</span> respectively.<br />
+<br />
+Prism angle using the left-hand side scale <span
+class="math inline">\(A_L\)</span>, <span class="math display">\[A_L =
+\frac{|A_{1L} - T_{2L}|}{2}\]</span> and prism angle using the
+right-hand side scale <span class="math inline">\(A_R\)</span>, <span
+class="math display">\[A_R = \frac{|A_{1R} - T_{2R}|}{2}\]</span> Then,
+by taking the average, the angle of prism, <span
+class="math display">\[A = \frac{A_L + A_R}{2}\]</span></p>
+<h3 id="the-d-i-curve">The <span class="math inline">\(D-i\)</span>
+curve</h3>
+<figure>
+<img src="di.jpg"
+alt="Top view of the prism table indicating refraction and reflection. T_0 represents the straight-through position and T represents after deviated a light beam. " />
+<figcaption aria-hidden="true">Top view of the prism table indicating
+refraction and reflection. <span class="math inline">\(T_0\)</span>
+represents the straight-through position and T represents after deviated
+a light beam. <span class="citation"
+data-cites="sec1"></span></figcaption>
+</figure>
+<p>It is easily shown that, <span class="math display">\[2i + \theta =
+180^0\]</span><span class="math display">\[i =
+\frac{180^0-\theta}{2}\]</span></p>
+<p>If the left-hand side and right-hand side scale readings at the
+straight-through position are <span
+class="math inline">\(T_{0L}\)</span> and <span
+class="math inline">\(T_{0R}\)</span> and at the deviation, <span
+class="math inline">\(T_{L}\)</span> and <span
+class="math inline">\(T_{R}\)</span> respectively.<br />
+<br />
+Deviation using the left-hand side scale <span
+class="math inline">\(D_L\)</span>, <span class="math display">\[D_L =
+|T_L - T_{0L}|\]</span> and deviation using the right-hand side scale
+<span class="math inline">\(D_R\)</span>, <span
+class="math display">\[D_L = |T_R - T_{0R}|\]</span> Then the angle of
+deviation, <span class="math display">\[D = \frac{D_L + D_R}{2}\]</span>
+The calculated <span class="math inline">\(i\)</span> and <span
+class="math inline">\(D\)</span> values are used to plot the <span
+class="math inline">\(D-i\)</span> curve.</p>
+<h2 id="experiment-02">Experiment 02</h2>
+<h3 id="diffraction-grating-and-grating-constant">Diffraction grating
+and grating constant</h3>
+<p>A diffraction grating consists of evenly spaced (<span
+class="math inline">\(d\)</span>) slits. Due to diffraction, these slits
+act as individual sources of light rays. After constructive and
+destructive interference of these multiple light rays, the result will
+be evenly spaced lightening regions.</p>
+<figure>
+<img src="dif.png" alt="Resulted pattern of a diffraction grating " />
+<figcaption aria-hidden="true">Resulted pattern of a diffraction grating
+<span class="citation" data-cites="libretexts-2024"></span></figcaption>
+</figure>
+<p>These lighted lines formed by constructive interference of coherent
+light rays. To make two light rays coherent, the difference in paths
+they took (<span class="math inline">\(\Delta x\)</span>) should be an
+integer multiple of the wavelength (<span
+class="math inline">\(\lambda\)</span>).<br />
+<br />
+Thus <span class="math display">\[\Delta x = n \lambda\]</span> As shown
+in the Figure (7), <span class="math display">\[\Delta x = d
+\sin{\theta}\]</span> Therefore, <span class="math display">\[d
+\sin{\theta} = n \lambda\]</span></p>
+<figure>
+<img src="four_slits.png" />
+</figure>
+<p>Using the Hg spectrum, a group of such lines can be created. Since
+their wavelengths are known, by measuring the angles (<span
+class="math inline">\(\theta\)</span>), <span
+class="math inline">\(d\)</span> can be evaluated.<br />
+<br />
+The diffraction constant(N) is defined as <strong>the number of lines
+(slits) per a millimeter</strong> <span class="citation"
+data-cites="sec3"></span>. If d is measured in millimeters, N is given
+by, <span class="math display">\[N = \frac{1}{d}\]</span></p>
+<h1 id="apparatus-and-materials">Apparatus and Materials</h1>
+<div class="wrapfigure">
+<p><span>r</span><span>0.44</span> <img src="photo.jpg"
+alt="image" /></p>
+</div>
+<h2 id="experiment-01-1">Experiment 01</h2>
+<p>Equipment used for the experiment as below.</p>
+<ul>
+<li><p>Analog spectrometer ( To measure the<br />
+angles)</p></li>
+<li><p>Prism</p></li>
+<li><p>Sodium (Na) lamp (As a monochromatic light source)</p></li>
+<li><p>Induction coil (To generate electricity for the Na lamp)</p></li>
+</ul>
+<h2 id="experiment-02-1">Experiment 02</h2>
+<ul>
+<li><p>Analog spectrometer ( To measure the<br />
+angles)</p></li>
+<li><p>Diffraction gating</p></li>
+<li><p>Hg discharge tube (To generate Hg<br />
+spectrum)</p></li>
+<li><p>Induction coil (To generate electricity for the Hg tube)</p></li>
+</ul>
+<h1 id="procedure">Procedure</h1>
+<h2 id="experiment-01-2">Experiment 01</h2>
+<h3
+id="adjustment-of-the-spectrometer-for-parallel-light-using-schusters-method">Adjustment
+of the Spectrometer for parallel light using <em>Schuster’s Method</em>
+</h3>
+<p>Although the simplest way to focus the collimator and telescope for a
+parallel beam of light is to view a distant object through these
+components and adjust them until a sharp image is observed, due to
+environmental constraints, the ’Schuster’s method’<span class="citation"
+data-cites="sec1"></span> was implemented for this adjustment.</p>
+<ol>
+<li><p>The telescope eyepiece was adjusted until a sharp image of the
+cross wires was displayed.</p></li>
+<li><p>The collimator’s slit was made thin and vertical and was
+illuminated by the sodium lamp.</p></li>
+<li><p>The prism was placed on the prism table with its center
+coinciding with the center of the prism table. Then the prism table was
+rotated until the refracting face AB was directed towards the
+collimator. Hence the light beam incident on the AB surface was
+refracted towards the AC surface.</p>
+<figure>
+<img src="sc1.png" alt="Top of the prism table " />
+<figcaption aria-hidden="true">Top of the prism table <span
+class="citation" data-cites="sec1"></span></figcaption>
+</figure>
+<p><br />
+<br />
+Afterwards, the image from the AC surface had been observed by naked eye
+and position <span class="math inline">\(T_0\)</span> was roughly
+determined.Subsequently, the telescope was positioned at <span
+class="math inline">\(T_o\)</span> and adjusted until the image was
+centered by cross wires.</p></li>
+<li><p>Following that, the prism table was turned so that the slit is
+image shifted towards the directed path of the rays from the collimator
+and reached at the position of minimum deviation. Next the telescope was
+also moved to that position and centered the cross wires on the image.
+(See Figure 10). This position can be easily identified as the image
+began to turn after achieving the minimum deviation.</p>
+<figure>
+<img src="sci3.png" id="fig:enter-label"
+alt="Image of the slit at the minimum deviation point " />
+<figcaption aria-hidden="true">Image of the slit at the minimum
+deviation point <span class="citation"
+data-cites="slit"></span></figcaption>
+</figure></li>
+<li><p>Next the telescope was moved away from the directed path so that
+the telescope was directed for about <span
+class="math inline">\(6^\circ\)</span> larger deviation from the minimum
+deviation point.Then the telescope was clamped.</p></li>
+<li><p>Then the prism table also moved such that the image was coincided
+with cross wires again.As there are two possible incident angles that
+gives the same deviation (Figure (11)), there are two positions for the
+prism which gives the same result.</p>
+<figure>
+<img src="di.png" id="fig:enter-label" alt="D-i curve " />
+<figcaption aria-hidden="true"><span class="math inline">\(D-i\)</span>
+curve <span class="citation" data-cites="di"></span></figcaption>
+</figure>
+<p><br />
+<br />
+Then <strong>only the telescope was adjusted</strong> so that a sharp
+image of the slit was displayed.</p></li>
+<li><p>After that, the prism table was rotated in the proper direction
+so that the cross wires coincided with the image at the other
+position.</p>
+<p><span><img src="sci3.png" style="height:2cm"
+alt="image" /></span></p>
+<figure>
+<img src="sci2.png" id="fig:enter-label" style="height:2cm" />
+</figure>
+<figure>
+<img src="sc4.png" id="fig:enter-label" style="height:2cm" />
+</figure>
+<figure>
+<img src="sci2.png" id="fig:enter-label" style="height:2cm" />
+</figure>
+<p>[1]<span><img src="sci3.png" style="height:2cm"
+alt="image" /></span></p>
+<p>Then <strong>only the collimater was adjusted</strong> so that a
+sharp image of the slit was displayed.</p></li>
+<li><p>The prism table was rotated to the first position and repeated
+the steps 6 and 7 until a sharp image was gained at the both
+positions.</p>
+<h3 id="leveling-the-prism-table">Leveling the prism table</h3>
+<p><span class="citation" data-cites="sec1"></span> The prism table has
+three leveling screws P, Q and R at the corners of an equilateral
+triangle .</p>
+<ol>
+<li><p>The prism was placed on the prism table with vertex A at the
+center of the table and side AB perpendicular to the line joining
+leveling screws P and Q.</p>
+<figure>
+<img src="level1.png" id="fig:enter-label"
+alt="Leveling screws and lines marked on the prism table " />
+<figcaption aria-hidden="true">Leveling screws and lines marked on the
+prism table <span class="citation"
+data-cites="sec1"></span></figcaption>
+</figure></li>
+<li><p>The prism table was rotated until the incident beam falls
+approximately symmetrically at both the sides of A. (See Figure
+13)</p></li>
+<li><p>Then the telescope was rotated until the light reflected from
+face AB of the prism enters the telescope (i.e., position <span
+class="math inline">\(T_2\)</span>). While the image was being observed
+by the telescope, the screws P or R were adjusted until the image was
+symmetrical on the cross wires. (See Figure 14)</p>
+<figure>
+<img src="level2.png"
+alt="FOV of the telescope showing the image of the slit symmetrically placed on cross wires  " />
+<figcaption aria-hidden="true">FOV of the telescope showing the image of
+the slit symmetrically placed on cross wires <span class="citation"
+data-cites="sec1"></span> </figcaption>
+</figure></li>
+<li><p>Next, the telescope was rotated until till the light reflected
+from the other face (AC) of the prism entered the telescope, and the
+image was at the center of the cross wires, (<span
+class="math inline">\(T_1\)</span>). While the image was being observed
+by the telescope, the screw Q was adjusted until the image was
+symmetrical on the cross wires.</p></li>
+<li><p>The telescope was turned back to position T1 and and confirmed
+the clarity of the image at that end.</p></li>
+</ol></li>
+</ol>
+<p>Then, as the images at both ends are symmetrical, the prism table was
+leveled.</p>
+<h3 id="measuring-the-angle-of-the-prism">Measuring the angle of the
+prism</h3>
+<ol>
+<li><p>Prism was placed on the prism table as shown in Figure
+4.</p></li>
+<li><p>Then,the telescope was moved to the position <span
+class="math inline">\(T_1\)</span> at which the image of the slit was
+seen in the centre of the cross wires of the telescope. Both left and
+right vernier scale readings was recorded as <span
+class="math inline">\(T_{1L}\)</span> and <span
+class="math inline">\(T_{1R}\)</span>.</p></li>
+<li><p>The procedure in step 2 was repeated for the position <span
+class="math inline">\(T_2\)</span>. <span
+class="math inline">\(T_{2L}\)</span> and <span
+class="math inline">\(T_{2R}\)</span> were recorded.</p></li>
+</ol>
+<h3 id="measuring-the-angle-of-the-minimum-deviation">Measuring the
+angle of the minimum deviation</h3>
+<ol>
+<li><p>The telescope was placed directly towards the collimator and the
+straight through image at was observed symmetrically on the cross wires
+. Then, the readings of the straight-through position on left and right
+vernier scales was taken.</p></li>
+<li><p>The prism was placed on the table as shown in Figure 3.</p></li>
+<li><p>The rough position of the refracted image was identified using
+bare eye and the telescope was moved to there.</p></li>
+<li><p>The prism table was turned so that the slit is image shifted
+towards the directed path of the rays from the collimator and reached at
+the position of minimum deviation. Next the telescope was also moved to
+that position and centered the cross wires on the image. This position
+can be easily identified as the image began to turn after achieving the
+minimum deviation.</p></li>
+<li><p>The readings of the left and right vernier scales was
+taken.</p></li>
+</ol>
+<figure>
+<img src="e1.png"
+alt="A photograph which was taken while conducting the step" />
+<figcaption aria-hidden="true">A photograph which was taken while
+conducting the step</figcaption>
+</figure>
+<h3 id="obtaining-the-d-i-curve"> Obtaining the <span
+class="math inline">\(D-i\)</span> curve </h3>
+<ol>
+<li><p>The telescope was rotated to the straight-through position and
+clamped.</p></li>
+<li><p>The platform-clamp was released and the platform was rotated
+until the scale reading on right and left sides were <span
+class="math inline">\(0^\circ \hspace{3pt}0&#39;\)</span> and <span
+class="math inline">\(180^\circ \hspace{3pt}0&#39;\)</span>. Then it was
+clamped again. The scale reading are taken as <strong>the straight
+through position</strong>.</p></li>
+<li><p>The telescope was moved until it made <span
+class="math inline">\(90^\circ\)</span> with the collimator. (i.e, the
+scale reading of the right side was <span class="math inline">\(90^\circ
+\hspace{3pt}0&#39;\)</span>. Here <span
+class="math inline">\(90^0\)</span> is the first <span
+class="math inline">\(\theta\)</span> value in section 2.1.4)</p></li>
+<li><p>then the prism table was rotated in a way such that the angle of
+incidence is about <span class="math inline">\(45^0\)</span> by eye
+estimation .</p></li>
+<li><p>Then it was rotated until the image of the slit formed by
+reflection at the incident face coincides with the cross wires in the
+telescope (i.e. position 1 in Figure 5). Then the prism table was
+clamped.</p></li>
+<li><p>The telescope clamp was released, and the telescope was rotated
+to find the refracted ray (i.e. position 2 in Figure 5). Then the
+<strong>readings were recorded</strong> and the telescope was clamped.
+This corresponds to <span class="math inline">\(i=45^0\)</span>. (Refer
+the section 2.1.4)</p></li>
+<li><p>Then the telescope was moved back to the straight through
+position, and the readings were adjusted (Since the platform was
+unchanged, an adjustment not needed when <span
+class="math inline">\(\theta = 90^0\)</span>) to <span
+class="math inline">\(0^\circ \hspace{3pt}0&#39;\)</span> and <span
+class="math inline">\(180^\circ \hspace{3pt}0&#39;\)</span> by
+<strong>unclamping the platform rotation and rotating the scale</strong>
+Then the platform was clamped, and <strong>the straight-through position
+values were taken</strong>.</p></li>
+<li><p>The process was repeated for <span class="math inline">\(\theta =
+85^0 ,80^0 ,75^0 ,70^0 , 65^0\)</span>. <strong>Since <span
+class="math inline">\(\theta = 85^0\)</span>, the platform rotation was
+used to step 4 and 5 not the prism table rotation</strong></p></li>
+</ol>
+<h2 id="experiment-02-2">Experiment 02</h2>
+<h3 id="observing-the-straight-through-position">Observing the
+Straight-Through position</h3>
+<ol>
+<li><p>The diffraction grating was placed on the prism table by making
+sure that the grating lines are vertical to the platform and the grating
+was parallel to the horizontal lines in the prism table (See Figure
+16).</p></li>
+<li><p>The telescope was rotated to the straight-through position and
+clamped.</p></li>
+<li><p>The platform-clamp was released and the platform was rotated
+until the scale reading on right and left sides were <span
+class="math inline">\(0^\circ \hspace{3pt}0&#39;\)</span> and <span
+class="math inline">\(180^\circ \hspace{3pt}0&#39;\)</span>.</p></li>
+<li><p>The telescope was rotated by 90º as shown in Figure 16. Then the
+telescope was clamped.</p>
+<figure>
+<img src="ge.png" id="fig:enter-label"
+alt="Schematics diagram for observing the ray direction of a diffraction grating from the spectrometer  " />
+<figcaption aria-hidden="true">Schematics diagram for observing the ray
+direction of a diffraction grating from the spectrometer <span
+class="citation" data-cites="sec1"></span> </figcaption>
+</figure></li>
+<li><p>The prism table was rotated until the Mercury light source (zero
+order spectrum – the light bulb but not the spectral line) was centered
+on the cross hair. Then the incident angle of the light on the grating
+then 45°. Then the prism table was clamped.</p></li>
+<li><p>The telescope was turned 90° back to its original position. The
+platform was rotated 135° in the clockwise direction so that the light
+from the source was perpendicular to the grating.</p></li>
+</ol>
+<figure>
+<img src="e2.png"
+alt="A photograph which was taken while conducting the step" />
+<figcaption aria-hidden="true">A photograph which was taken while
+conducting the step</figcaption>
+</figure>
+<h3 id="observering-the-spectrum-of-hg">Observering the spectrum of
+Hg</h3>
+<ol>
+<li><p>The telescope was moved from the straight-through position, and
+the Mercury spectrum was observed on both sides.</p></li>
+<li><p>The telescope was rotated back to the straight-through position
+and recorded the scale values.</p></li>
+<li><p>Then the telescope was rotated into the right side and each of
+the main spectrum lines were observed at the center of the cross wires.
+The corresponding scale reading values were taken.</p></li>
+</ol>
+<p><span><img src="violet.jpg" style="height:5cm"
+alt="image" /></span></p>
+<figure>
+<img src="green.jpg" id="fig:enter-label" style="height:5cm"
+alt="The green line, yellow 1 and yellow 2 lines" />
+<figcaption aria-hidden="true">The green line, yellow 1 and yellow 2
+lines</figcaption>
+</figure>
+<h1 id="experimental-data">Experimental Data</h1>
+<p>Data which was recorded while proceeding above experiments as
+below.</p>
+<h2 id="experiment-01-3">Experiment 01</h2>
+<div id="tab:example_table">
+<table>
+<caption>Readings for measuring the angle of the prism</caption>
+<thead>
+<tr class="header">
+<th colspan="2" style="text-align: center;"><span
+class="math inline">\(T_1\)</span></th>
+<th colspan="2" style="text-align: center;"><span
+class="math inline">\(T_2\)</span></th>
+<th style="text-align: center;">A</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(T_{1L}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{1R}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{2L}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{2R}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(94^0
+\hspace{3pt} 55.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(274^0
+\hspace{3pt} 35.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(214^0
+\hspace{3pt} 51.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(34^0
+\hspace{3pt} 45.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(60^0
+\hspace{3pt} 1.5&#39; \hspace{3pt} \pm 0.3&#39;\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tab:example_table">
+<table>
+<caption>Readings for measuring the angle of minimum deviation</caption>
+<thead>
+<tr class="header">
+<th colspan="2" style="text-align: center;"><span
+class="math inline">\(T_0\)</span></th>
+<th colspan="2" style="text-align: center;"><span
+class="math inline">\(T_1\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(D_{min}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(T_{0L}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{0R}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{1L}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{1R}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(153^0
+\hspace{3pt} 24.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(333^0
+\hspace{3pt} 5.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(114^0
+\hspace{3pt} 40.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(294^0
+\hspace{3pt} 29.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(38^0
+\hspace{3pt}40.0&#39; \hspace{3pt} \pm
+\hspace{3pt}0.5&#39;\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tab:example_table">
+<table>
+<caption>Readings for plotting the <span class="math inline">\(D -
+i\)</span> curve</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\theta
+\hspace{3pt} (\pm 0.5&#39;)\)</span></th>
+<th colspan="2" style="text-align: center;"><span
+class="math inline">\(T_0\)</span></th>
+<th colspan="2" style="text-align: center;"><span
+class="math inline">\(T\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(i\hspace{3pt} (\pm 0.7\)</span>’)</th>
+<th style="text-align: center;"><span
+class="math inline">\(D\hspace{3pt} (\pm 0.5&#39;)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(T_{0L}
+\hspace{3pt}  (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{0R}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{L}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_{R}
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(90^0
+\hspace{3pt}0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(180^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(141^0
+\hspace{3pt} 05.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(320^0
+\hspace{3pt} 54.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(45^0
+\hspace{3pt}0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(39^0
+\hspace{3pt}0.5&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(85^0\hspace{3pt}0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(180^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(143^0
+\hspace{3pt} 43.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(323^0
+\hspace{3pt} 28.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(47^0
+\hspace{3pt}30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(36^0
+\hspace{3pt}24.5&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(80^0\hspace{3pt}0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(180^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(146^0
+\hspace{3pt} 19.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(326^0
+\hspace{3pt} 01.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(50^0
+\hspace{3pt}0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(33^0
+\hspace{3pt}50.0&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(75^0\hspace{3pt}0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(180^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(148^0
+\hspace{3pt} 35.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(328^0
+\hspace{3pt} 29.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(52^0
+\hspace{3pt}30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(31^0
+\hspace{3pt}28.0&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(70^0\hspace{3pt}0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(180^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(151^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(330^0
+\hspace{3pt} 35.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(55^0
+\hspace{3pt}0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(29^0
+\hspace{3pt}12.5&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(65^0\hspace{3pt}0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(180^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^0
+\hspace{3pt} 00.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(153^0
+\hspace{3pt} 49.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(333^0
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(57^0
+\hspace{3pt}30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(26^0
+\hspace{3pt}20.5&#39;\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="experiment-02-3">Experiment 02</h2>
+<div id="tab:example_table">
+<table>
+<caption>The straight-through position of the spectrometer</caption>
+<thead>
+<tr class="header">
+<th colspan="2" style="text-align: center;"><strong>Straight through
+position (<span class="math inline">\(T_s\)</span>)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(L
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(R
+\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(190^0
+\hspace{3pt} 10.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9^0
+\hspace{3pt} 29.0&#39;\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tab:example_table">
+<table>
+<caption>Readings of the positions of the spectral lines in Mercury
+(Hg)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Spectral Line</strong></th>
+<th colspan="2" style="text-align: center;">Position (T)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Left<span
+class="math inline">\(\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+<td style="text-align: center;">Right<span
+class="math inline">\(\hspace{3pt} (\pm 0.5&#39;)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Violet <span
+class="math inline">\((T_1)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(205^0
+\hspace{3pt} 12.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(25^0
+\hspace{3pt} 0.0&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Green <span
+class="math inline">\((T_2)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(209^0
+\hspace{3pt} 13.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(28^0
+\hspace{3pt} 59.0&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Yellow 1 <span
+class="math inline">\((T_3)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(210^0
+\hspace{3pt} 13.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(30^0
+\hspace{3pt} 2.0&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Yellow 2 <span
+class="math inline">\((T_4)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(210^0
+\hspace{3pt} 29.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(30^0
+\hspace{3pt} 09.0&#39;\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="data-analysis">Data Analysis</h1>
+<p>Data which was recorded while proceeding above experiments as
+below.</p>
+<h2 id="experiment-01-4">Experiment 01</h2>
+<h3 id="angle-of-the-prism">Angle of the prism</h3>
+<p>From the left side scale,</p>
+<p><span class="math display">\[\begin{aligned}
+A_L &amp;= \frac{|T_{2L}-T_{1L}|}{2} \\
+&amp;=\frac{|214^0 \hspace{3pt} 51&#39; - 94^0
+\hspace{3pt}55&#39;|}{2}\\
+&amp;= 59^0 \hspace{3pt}58.0&#39; \hspace{3pt} \pm0.4&#39;
+\end{aligned}\]</span> From the right side scale, <span
+class="math display">\[\begin{aligned}
+A_R &amp;= \frac{|T_{2R}-T_{1R}|}{2} \\
+&amp;=\frac{|360^0 + 34^0 \hspace{3pt} 45&#39; - 274^0
+\hspace{3pt}35&#39;|}{2}\\
+&amp;= 60^0 \hspace{3pt}5.0&#39; \hspace{3pt} \pm0.4&#39;
+\end{aligned}\]</span> Therefore the prism angle (A), <span
+class="math display">\[\begin{aligned}
+A &amp;= \frac{A_R + A_L}{2}\\
+&amp;= \frac{60^0 \hspace{3pt}5&#39; + 59^0 \hspace{3pt}58&#39;}{2}\\
+&amp;= 60^0 \hspace{3pt}1.5&#39; \hspace{3pt} \pm0.3&#39;
+\end{aligned}\]</span></p>
+<h3 id="angle-of-the-minimum-deviation">Angle of the minimum
+deviation</h3>
+<p>Using the left-hand scale readings of the spectrometer, <span
+class="math display">\[\begin{aligned}
+D_L &amp;= |T_{L}-T_{0L}| \\
+&amp;=|114^0 \hspace{3pt} 40&#39; - 153^0 \hspace{3pt}24&#39;|\\
+&amp;= 38^0 \hspace{3pt}44.0&#39; \hspace{3pt} \pm0.7&#39;
+\end{aligned}\]</span> Using the right-hand scale readings of the
+spectrometer, <span class="math display">\[\begin{aligned}
+D_R &amp;= |T_{R}-T_{0R}| \\
+&amp;=|294^0 \hspace{3pt} 29&#39; - 333^0 \hspace{3pt}5&#39;|\\
+&amp;= 38^0 \hspace{3pt}36.0&#39; \hspace{3pt} \pm0.7&#39;
+\end{aligned}\]</span> Therefore the angle of the minimum deviation,
+<span class="math display">\[\begin{aligned}
+D_{min} &amp;= \frac{D_R + D_L}{2}\\
+&amp;= \frac{38^0 \hspace{3pt}36&#39; + 38^0 \hspace{3pt}44&#39;}{2}\\
+&amp;= 38^0 \hspace{3pt}40.0&#39; \hspace{3pt} \pm0.5&#39;
+\end{aligned}\]</span></p>
+<h3 id="refractive-index-of-the-prism">Refractive index of the
+prism</h3>
+<p><span> <span class="math display">\[\begin{aligned}
+n &amp;= \frac{\sin(\frac{A + D_{min}}{2})}{\sin(\frac{A}{2})}
+\\
+\\
+&amp;= \frac{\sin(\frac{ 60^0 \hspace{3pt}1&#39;
+\hspace{3pt}30&#39;&#39; +38^0 \hspace{3pt}40&#39;
+}{2})}{\sin(\frac{60^0 \hspace{3pt}1&#39;
+\hspace{3pt}30&#39;&#39;}{2})}\\
+&amp;= 1.5167 \hspace{3pt} \pm 0.0001
+\end{aligned}\]</span> </span></p>
+<h3 id="angle-of-deviation-d">Angle of deviation (D)</h3>
+<p>D can be calculated using the method that used for <span
+class="math inline">\(D_{min}\)</span>. For example, when <span
+class="math inline">\(\theta = 90^0\)</span><br />
+<br />
+Using the left-hand scale readings of the spectrometer, <span
+class="math display">\[\begin{aligned}
+D_L &amp;= |T_{L}-T_{0L}| \\
+&amp;=|141^0 \hspace{3pt} 5&#39; - 180^0 \hspace{3pt}0&#39;|\\
+&amp;= 38^0 \hspace{3pt}55.0&#39; \hspace{3pt} \pm0.7&#39;
+\end{aligned}\]</span> Using the right-hand scale readings of the
+spectrometer, <span class="math display">\[\begin{aligned}
+D_R &amp;= |T_{R}-T_{0R}| \\
+&amp;=|320^0 \hspace{3pt} 54&#39; - 360^0 \hspace{3pt}0&#39;|\\
+&amp;= 39^0 \hspace{3pt}6.0&#39; \hspace{3pt} \pm0.7&#39;
+\end{aligned}\]</span> Therefore the angle of the minimum deviation,
+<span class="math display">\[\begin{aligned}
+D &amp;= \frac{D_R + D_L}{2}\\
+&amp;= \frac{38^0 \hspace{3pt}55&#39; + 39^0 \hspace{3pt}6&#39;}{2}\\
+&amp;= 39^0 \hspace{3pt}0.5&#39; \hspace{3pt} \pm0.5&#39;
+\end{aligned}\]</span></p>
+<figure>
+<img src="graph1.jpg" id="fig:enter-label"
+alt="The D-i graph did not result the expected curve. Instead it showed approximately a linear relationship. The explanation is available in the discussion." />
+<figcaption aria-hidden="true">The <span
+class="math inline">\(D-i\)</span> graph did not result the expected
+curve. Instead it showed approximately a linear relationship. The
+explanation is available in the discussion.</figcaption>
+</figure>
+<h2 id="experiment-02-4">Experiment 02</h2>
+<h3 id="angle-theta-for-each-color">Angle (<span
+class="math inline">\(\theta\)</span>) for each color</h3>
+<p>Consider the violet line.<br />
+<br />
+Using the left-hand scale readings of the spectrometer, <span
+class="math display">\[\begin{aligned}
+\theta_L &amp;= |\theta_{1L}-T_{SL}| \\
+&amp;=|205^0 \hspace{3pt} 12&#39; - 190^0 \hspace{3pt}10&#39;|\\
+&amp;= 15^0 \hspace{3pt}2.0&#39; \hspace{3pt} \pm0.7&#39;
+\end{aligned}\]</span> Using the right-hand scale readings of the
+spectrometer, <span class="math display">\[\begin{aligned}
+\theta_R &amp;= |\theta_{1R}-\theta_{SR}| \\
+&amp;=|25^0 \hspace{3pt} 0&#39; - 9^0 \hspace{3pt}29&#39;|\\
+&amp;= 15^0 \hspace{3pt}31.0&#39; \hspace{3pt} \pm0.7&#39;
+\end{aligned}\]</span> Therefore the angle of the minimum deviation,
+<span class="math display">\[\begin{aligned}
+\theta &amp;= \frac{\theta_R + theta_L}{2}\\
+&amp;= \frac{15^0 \hspace{3pt}31.0&#39; + 15^0 \hspace{3pt}2.0&#39;
+}{2}\\
+&amp;= 15^0 \hspace{3pt}16.5&#39; \hspace{3pt} \pm0.5&#39;
+\end{aligned}\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Spectral Line</strong></th>
+<th style="text-align: center;"><strong>Wavelength (nm) <span
+class="citation" data-cites="hyp"></span></strong></th>
+<th style="text-align: center;"><span
+class="math inline">\(\theta_L\hspace{3pt} (\pm 0.7&#39;)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\theta_R
+\hspace{3pt} (\pm 0.7&#39;)\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(\theta_{colour} = \frac{\theta_R +
+\theta_L}{2}\hspace{3pt} (\pm 0.5&#39;)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Violet <span
+class="math inline">\((T_1)\)</span></td>
+<td style="text-align: center;">436</td>
+<td style="text-align: center;"><span class="math inline">\(15^0
+\hspace{3pt} 2.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15^0
+\hspace{3pt} 31.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15^0
+\hspace{3pt} 16.5&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Green <span
+class="math inline">\((T_2)\)</span></td>
+<td style="text-align: center;">546</td>
+<td style="text-align: center;"><span class="math inline">\(19^0
+\hspace{3pt} 3.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19^0
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19^0
+\hspace{3pt} 16.5&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Yellow 1 <span
+class="math inline">\((T_3)\)</span></td>
+<td style="text-align: center;">577</td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 3.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 33.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 16.5&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Yellow 2 <span
+class="math inline">\((T_4)\)</span></td>
+<td style="text-align: center;">579</td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 19.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 40.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 29.5&#39;\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="spacing-of-the-grating-d-for-each-color">Spacing of the grating
+(<span class="math inline">\(d\)</span>) for each color</h3>
+<p>Using equation <span class="math inline">\(n\lambda = d
+\sin(\theta)\)</span> for <span class="math inline">\(n=1\)</span>,</p>
+<p><span class="math display">\[\begin{aligned}
+\lambda &amp;= d \sin(\theta) \\
+d &amp;= \frac{\lambda}{\sin(\theta)}
+\end{aligned}\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Spectral Line</strong></th>
+<th style="text-align: center;"><strong><span
+class="math inline">\(\theta_{color} \hspace{3pt}(\pm
+\hspace{3pt}0.5&#39;)\)</span></strong></th>
+<th style="text-align: center;"><strong>Spacing of the grating d
+(nm)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Violet <span
+class="math inline">\((T_1)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15^0
+\hspace{3pt} 16.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1654.9 \pm
+\hspace{3pt}0.9\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Green <span
+class="math inline">\((T_2)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19^0
+\hspace{3pt} 16.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1654.0  \pm
+\hspace{3pt}0.7\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Yellow 1 <span
+class="math inline">\((T_3)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 16.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1665.1  \pm
+\hspace{3pt}0.7\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Yellow 2 <span
+class="math inline">\((T_4)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 29.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1654.0  \pm
+\hspace{3pt}0.6\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="average-spacing-of-the-grating-overlined">Average spacing of the
+grating (<span class="math inline">\(\overline{d}\)</span>) </h3>
+<p><span class="math display">\[\begin{aligned}
+    \overline{d} &amp;= \frac{1654.9 + 1654.0 + 1665.1 + 1654.0}{4} \\
+    &amp;= 1657 \pm 3  \hspace{3pt} nm \\
+     &amp;= (1.657 \pm 0.003) \times 10^{-3} \hspace{3pt} mm
+\end{aligned}\]</span></p>
+<h3 id="grating-constant-n">Grating Constant (N) </h3>
+<p><span class="math display">\[\begin{aligned}
+    N &amp;= \frac{1}{d} \\
+    &amp;= \frac{1}{1.657  \times 10^{-3} \hspace{3pt} mm} \\
+     &amp;= 603.5 \hspace{3pt} mm^{-1}\\
+     &amp;= 604 \pm 1 mm^{-1}
+\end{aligned}\]</span></p>
+<h1 id="error-analysis">Error Analysis</h1>
+<h2 id="experiment-01-5">Experiment 01</h2>
+<h3 id="uncertainty-of-the-angle-of-the-prism-delta-a">Uncertainty of
+the angle of the prism (<span class="math inline">\(\delta
+A\)</span>)</h3>
+<p>Since <span class="math display">\[A_L =
+\frac{|T_{2L}-T_{1L}|}{2}\]</span> Using propagation of error, <span
+class="math display">\[\begin{aligned}
+    (\delta A_L)^2 &amp;= \left( \frac{\partial A_L}{\partial T_{2L}}
+\right)^2 (\delta T_{2L})^2 + \left( \frac{\partial A_L}{\partial
+T_{1L}} \right)^2 (\delta T_{1L})^2 \\
+    &amp;= \left(\frac{1}{2}\right)^2 (0.5&#39;)^2 +
+\left(\frac{1}{2}\right)^2 (0.5&#39;)^2 \\
+    \therefore \delta A_L &amp;= \pm \hspace{3pt}
+\frac{0.5&#39;}{\sqrt{2}}
+\end{aligned}\]</span> Uncertainty of the <span
+class="math inline">\(A_R\)</span> value is also the same.<br />
+<br />
+Then using, <span class="math display">\[A = \frac{A_R +
+A_L}{2}\]</span> Uncertainty of A, <span
+class="math display">\[\begin{aligned}
+    (\delta A)^2 &amp;= \left( \frac{\partial A}{\partial A_L} \right)^2
+(\delta A_L)^2 + \left( \frac{\partial A}{\partial A_R} \right)^2
+(\delta A_R)^2 \\
+    &amp;= \left(\frac{1}{2}\right)^2
+\left(\frac{0.5&#39;}{\sqrt{2}}\right)^2 + \left(\frac{1}{2}\right)^2
+\left(\frac{0.5&#39;}{\sqrt{2}}\right)^2 \\
+    \therefore \delta A &amp;= \pm \hspace{3pt} 0.3&#39;
+\end{aligned}\]</span></p>
+<h3
+id="uncertainty-of-the-angle-of-the-minimum-deviation-delta-d_min">Uncertainty
+of the angle of the minimum deviation (<span
+class="math inline">\(\delta D_{min}\)</span>)</h3>
+<p>Since <span class="math display">\[D_L = |T_{L}-T_{0L}|\]</span>
+Using propagation of error, <span class="math display">\[\begin{aligned}
+    (\delta D_L)^2 &amp;= \left( \frac{\partial D_L}{\partial T_{L}}
+\right)^2 (\delta T_{L})^2 + \left( \frac{\partial D_L}{\partial T_{0L}}
+\right)^2 (\delta T_{0L})^2 \\
+    &amp;= (1)^2 (0.5&#39;)^2 + (1)^2 (0.5&#39;)^2 \\
+    \therefore \delta D_L &amp;= \pm \hspace{3pt} 0.5\sqrt{2}&#39;
+\end{aligned}\]</span> Uncertainty of the <span
+class="math inline">\(D_R\)</span> value is also the same.<br />
+<br />
+Then using, <span class="math display">\[D_{min} = \frac{D_R +
+D_L}{2}\]</span> Uncertainty of <span
+class="math inline">\(D_{min}\)</span>, <span
+class="math display">\[\begin{aligned}
+    (\delta D_{min})^2 &amp;= \left( \frac{\partial D_{min}}{\partial
+D_L} \right)^2 (\delta D_L)^2 + \left( \frac{\partial D_{min}}{\partial
+D_R} \right)^2 (\delta D_R)^2 \\
+    &amp;= \left(\frac{1}{2}\right)^2 \left(0.5&#39;\sqrt{2}\right)^2 +
+\left(\frac{1}{2}\right)^2 \left(0.5&#39;\sqrt{2}\right)^2 \\
+    \therefore \delta D_{min} &amp;= \pm \hspace{3pt} 0.5&#39;
+\end{aligned}\]</span></p>
+<h3
+id="uncertainty-of-the-refractive-index-of-the-prism-delta-n">Uncertainty
+of the refractive index of the prism (<span class="math inline">\(\delta
+n\)</span>)</h3>
+<p><span class="math display">\[n = \frac{\sin(\frac{A +
+D_{min}}{2})}{\sin(\frac{A}{2})}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+    \therefore \frac{\partial n}{\partial D_{min}} &amp;=
+\frac{\cos{\frac{A + D_{min}}{2}}}{2\sin{\frac{A}{2}}} \\
+    &amp;= \frac{\cos{\frac{ 60^0 \hspace{3pt}1.5&#39; + 38^0
+\hspace{3pt}40.0&#39;}{2}}}{2\sin{\frac{ 60^0
+\hspace{3pt}1.5&#39;}{2}}}\\
+    &amp;= 0.651
+\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+    \therefore \frac{\partial n}{\partial A} &amp;=
+\frac{\sin{\frac{A}{2}}\cos{\frac{A + D_{min}}{2}}
+-\cos{\frac{A}{2}}\sin(\frac{A + D_{min}}{2}) }{2\sin^2{\frac{A}{2}}} \\
+    &amp;= \frac{\sin{\frac{60^0
+\hspace{3pt}1.5&#39;}{2}}\cos{\frac{60^0 \hspace{3pt}1.5&#39; + 38^0
+\hspace{3pt}40.0&#39;}{2}} -\cos{\frac{60^0
+\hspace{3pt}1.5&#39;}{2}}\sin(\frac{60^0 \hspace{3pt}1.5&#39; + 38^0
+\hspace{3pt}40.0&#39;}{2}) }{2\sin^2{\frac{60^0
+\hspace{3pt}1.5&#39;}{2}}} \\
+    &amp;= -0.662
+\end{aligned}\]</span></p>
+<p>Using propagation of error, <span
+class="math display">\[\begin{aligned}
+    (\delta n)^2 &amp;= \left( \frac{\partial n}{\partial D_{min}}
+\right)^2 (\delta D_{min})^2 + \left( \frac{\partial n}{\partial A}
+\right)^2 (\delta A)^2 \\
+    &amp;= (0.651)^2 \left(\frac{0.5 \cdot \pi}{60 \cdot 180}\right)^2 +
+(-0.662)^2 \left(\frac{0.3 \cdot \pi}{60 \cdot 180}\right)^2 \\
+    \therefore \delta n &amp;= \pm \hspace{3pt} 10^{-4}
+\end{aligned}\]</span></p>
+<h3 id="uncertainty-of-the-angles-of-the-deviations-delta-d">Uncertainty
+of the angles of the deviations (<span class="math inline">\(\delta
+D\)</span>) </h3>
+<p>Since <span class="math display">\[D_L = |T_{L}-T_{0L}|\]</span>
+<span class="math display">\[D_R = |T_{R}-T_{0R}|\]</span> <span
+class="math display">\[D = \frac{D_R + D_L}{2}\]</span></p>
+<p>Using the calculation for the uncertainty of the angle of the minimum
+deviation , <span class="math display">\[\delta D = \pm \hspace{3pt}
+0.5&#39;\]</span></p>
+<h2 id="experiment-02-5">Experiment 02</h2>
+<h3 id="uncertainty-of-theta_colour">Uncertainty of <span
+class="math inline">\(\theta_{colour}\)</span></h3>
+<p>Since <span class="math display">\[\theta_L =
+|\theta_{1L}-\theta_{SL}|\]</span> <span class="math display">\[\theta_R
+= |\theta_{1R}-\theta_{SR}|\]</span> <span
+class="math display">\[\theta_{colour} = \frac{\theta_R +
+\theta_L}{2}\]</span></p>
+<p>Comparing with the calculation for the uncertainty of the angle of
+the minimum deviation , <span class="math display">\[\delta
+\theta_{colour} = \pm \hspace{3pt} 0.5&#39;\]</span></p>
+<h3 id="uncertainty-of-d-values-for-each-colour-delta-d">Uncertainty of
+<span class="math inline">\(d\)</span> values for each colour (<span
+class="math inline">\(\delta d\)</span>)</h3>
+<p>since <span class="math inline">\(n=1\)</span>, <span
+class="math display">\[\begin{aligned}
+\lambda &amp;= d \sin(\theta) \\
+d &amp;= \frac{\lambda}{\sin(\theta)}\\
+\frac{\partial d}{\partial \theta} &amp;= \frac{\lambda
+\cos{\theta}}{\sin^2{\theta}} = \frac{d}{\tan{\theta}}
+\end{aligned}\]</span> Then, <span
+class="math display">\[\begin{aligned}
+        (\delta d)^2 &amp;= \left( \frac{\partial d}{\partial \theta}
+\right)^2 (\delta \theta)^2\\
+    \therefore \delta d &amp;= \pm \hspace{3pt} \frac{d}{\tan{\theta}}
+\cdot \frac{0.5 \cdot \pi}{60 \cdot 180}
+\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+       \text{Violet line} &amp;\longrightarrow \pm \hspace{3pt} 0.9 nm\\
+              \text{Green line} &amp;\longrightarrow \pm \hspace{3pt}
+0.7 nm\\
+       \text{Yellow 1 line} &amp;\longrightarrow \pm \hspace{3pt} 0.7 nm
+\\
+       \text{Yellow 2 line} &amp;\longrightarrow \pm \hspace{3pt} 0.6 nm
+\end{aligned}\]</span></p>
+<h3
+id="uncertainty-of-the-average-of-d-values-delta-overlined">Uncertainty
+of the average of <span class="math inline">\(d\)</span> values <span
+class="math inline">\(\delta \overline{d}\)</span></h3>
+<p><u>Error due to Propagation of error</u><br />
+<br />
+since <span class="math inline">\(\overline{d} =
+\frac{\sum{d}}{4}\)</span>, Using error propagation, <span
+class="math display">\[\begin{aligned}
+    (\delta \overline{d})^2 &amp;= \sum_{i=1}^{4} \left(\frac{\partial
+\overline{d}}{\partial d_i}\right)^2 (\delta d_i)^2
+    = \left(\frac{1}{4}\right)^2 (0.9^2 + 0.7^2 + 0.7^2 + 0.6^2) \\
+    \therefore \delta \overline{d} &amp;= \pm \hspace{3pt} 0.4
+\hspace{3pt}nm
+\end{aligned}\]</span><br />
+<br />
+<u>Standard deviation</u><br />
+<br />
+<span class="math display">\[\begin{aligned}
+    \sigma_{d} &amp;= \sqrt{\sum_{i=1}^{n} \frac{(d_i -
+\overline{d})^2}{n(n-1)}}
+    = \sqrt{\sum_{i=1}^{4} \frac{(d_i - 1657)^2}{12}} \\
+    &amp;= 2.7\hspace{3pt} nm \approx 3 \hspace{3pt} nm
+\end{aligned}\]</span></p>
+<p>Therefore the uncertainty of the average of <span
+class="math inline">\(d\)</span> values is <span class="math inline">\(3
+\hspace{3pt} nm\)</span></p>
+<h3 id="uncertainty-of-grating-constant-delta-n">Uncertainty of Grating
+Constant (<span class="math inline">\(\delta N\)</span>)</h3>
+<p>since <span class="math inline">\(N = \frac{1}{d}\)</span><br />
+, <span class="math display">\[\frac{\partial N}{\partial d} =
+-\frac{1}{d^2} = -N^2\]</span></p>
+<p>Therefore, <span class="math display">\[\delta N =
+\sqrt{\left(\frac{\partial N}{\partial d}\right)^2 (\delta d)^2} = \pm
+603.5^2 mm^{-2} \cdot 3 \times 10^{-6} mm = \pm \hspace{3pt} 1
+mm^{-1}\]</span></p>
+<h1 id="final-results">Final Results</h1>
+<h2 id="experiment-01-6">Experiment 01</h2>
+<ul>
+<li><p>Angle of the <strong>prism</strong> <span
+class="math inline">\((A)\)</span> = <span class="math inline">\(60^0
+\hspace{3pt} 1.5&#39; \pm 0.3&#39;\)</span></p></li>
+<li><p>Angle of the <strong>minimum deviation</strong> <span
+class="math inline">\((D_{min})\)</span> = <span
+class="math inline">\(38^0 \hspace{3pt} 40.0&#39; \pm
+0.5&#39;\)</span></p></li>
+<li><p><strong>Refractive index</strong> of the material of the prism
+<span class="math inline">\((n)\)</span> = <span
+class="math inline">\(1.5167 \pm 0.0001\)</span></p></li>
+<li><p>Angle of the <strong>minimum deviation</strong> <span
+class="math inline">\((D_{min})\)</span> using <span
+class="math inline">\(D-i\)</span> curve = N/A</p></li>
+</ul>
+<h2 id="experiment-02-6">Experiment 02</h2>
+<ul>
+<li><p>Angle of deviation (<span
+class="math inline">\(\theta_{colour}\)</span>) for Spectral Lines of
+<strong>Hg</strong></p>
+<ul>
+<li><p>Violet <span class="math inline">\((T_1) = 15^0 \hspace{3pt}
+16.5&#39; \pm 0.5&#39;\)</span></p></li>
+<li><p>Green <span class="math inline">\((T_2) = 19^0 \hspace{3pt}
+16.5&#39; \pm 0.5&#39;\)</span></p></li>
+<li><p>Yellow 1 <span class="math inline">\((T_3) = 20^0 \hspace{3pt}
+16.5&#39; \pm 0.5&#39;\)</span></p></li>
+<li><p>Yellow 2 <span class="math inline">\((T_4) = 20^0 \hspace{3pt}
+29.5&#39; \pm 0.5&#39;\)</span></p></li>
+</ul></li>
+<li><p><strong>Spacing of the grating</strong> <span
+class="math inline">\((d) = 1657 \pm 3 \hspace{3pt}nm\)</span></p></li>
+<li><p><strong>Grating constant</strong> (N) of the diffraction grating
+= <span class="math inline">\(604 \pm 1
+\hspace{3pt}mm^{-1}\)</span></p></li>
+</ul>
+<h1 id="discussion">Discussion</h1>
+<h2 id="experiment-01-7">Experiment 01</h2>
+<p>The experiment was conducted using sodium light. Since Na has almost
+monochromatic spectrum of around 589 nm (Yellow), the created image of
+the slit can be observed without any dispersion.<br />
+<br />
+It was important to adjust the collimator and the telescope to parallel
+light rays before performing the experiment as it maximize the accuracy
+and precision</p>
+<h4 id="angle-of-the-prism-a">Angle of the prism (<span
+class="math inline">\(A\)</span>) :</h4>
+<p>Because the prism relied on is standard, a prism angle of around
+<span class="math inline">\(60^0\)</span> is expected. Hence the
+obtained experimental value of <span class="math inline">\(60^0
+\hspace{3pt} 1.5&#39; \pm0.3&#39;\)</span> agrees with the expected
+result.</p>
+<h4 id="angle-of-the-minimum-deviation-d_min">Angle of the minimum
+deviation (<span class="math inline">\(D_{min}\)</span>) :</h4>
+<p>For a prism of a prism angle of <span
+class="math inline">\(\approx60^0\)</span> and refractive index of about
+1.5, the expected value for the minimum deviation is,<br />
+<br />
+From Equation(5), <span class="math display">\[r_1 = \frac{A}{2} \approx
+30^0\]</span> From Equation (1), <span
+class="math display">\[\begin{aligned}
+    n = 1.5 = \frac{\sin{i}}{\sin{r_1}} &amp;=
+\frac{\sin{i}}{\sin{30^0}}\\
+    \therefore i &amp;\approx 49^0
+\end{aligned}\]</span> From Equation (4), <span
+class="math display">\[\begin{aligned}
+    i &amp;= \frac{A + D_{min}}{2} \\ \therefore 49^0&amp;=\frac{60^0 +
+D_{min}}{2}
+    \\  \therefore D_{min} &amp;\approx 38^0
+\end{aligned}\]</span> Since the obtained value from the experiment is
+<span class="math inline">\(38^0 \hspace{3pt} 40.0&#39; \pm
+0.5&#39;\)</span>. The obtained value is acceptable.</p>
+<h4 id="index-of-refraction-of-the-prism-material-n">Index of refraction
+of the prism material (<span class="math inline">\(n\)</span>) :</h4>
+<p>Since the expected refraction index lies around 1.5, the resulted
+value of <span class="math inline">\(1.5167 \pm 0.0001\)</span> is also
+acceptable.<br />
+<br />
+<strong><u><span class="math inline">\(D-i\)</span>
+Curve</u></strong><br />
+<br />
+Unfortunately, the experimental values of <span
+class="math inline">\(D\)</span> and <span
+class="math inline">\(i\)</span> did not result the predicted curve.
+Instead, they had approximately a linear relationship. The result was
+due to a mistake in the experimental measurement taking procedure.The
+explanation is as follows:</p>
+<ul>
+<li><p>Assume that the deviation for <span
+class="math inline">\(\theta=90^0\)</span> has already been measured.
+When the telescope is moved straight through, the reading is zero (since
+the platform has not altered).</p></li>
+<li><p>The telescope is now shifted till the right side scale reading
+reaches <span class="math inline">\(85^0\)</span> (<span
+class="math inline">\(\theta\)</span> measurement). After that,
+<strong>the platform is turned clockwise</strong> to center the
+reflected imagine on the cross wires.</p></li>
+<li><p>The incidence angle for <span
+class="math inline">\(\theta=90^0\)</span> is <span
+class="math inline">\(45^0\)</span>, while for <span
+class="math inline">\(\theta=85^0\)</span> it is <span
+class="math inline">\(47^0 \hspace{3pt} 30&#39;\)</span>. Hence, the
+platform is turned <span class="math inline">\(2^0 \hspace{3pt}
+30&#39;\)</span> degrees clockwise. Therefore, <strong>the new straight
+through reading would be <span class="math inline">\(2^0 \hspace{3pt}
+30&#39;\)</span></strong> (on right side scale). But there <span
+class="math inline">\(0^0 \hspace{3pt} 0&#39;\)</span> was entered as
+the right side reading. Hence, <strong>the deviation is not equal to
+<span class="math inline">\(|T-T_0|\)</span>, but <span
+class="math inline">\(|T-T_0| + 2^0 \hspace{3pt}
+30&#39;\)</span></strong>.</p></li>
+<li><p>After taking the reading for <span
+class="math inline">\(\theta=85^0\)</span>, the telescope is returned to
+the straight through position. Because the reading is <span
+class="math inline">\(2^0 \hspace{3pt} 30&#39;\)</span>, it is zeroed by
+<strong>rotating the platform counterclockwise. As a result, the
+incident angle is again <span
+class="math inline">\(45^0\)</span></strong>.</p></li>
+<li><p>Following the zero correction, the telescope is rotated to <span
+class="math inline">\(80^0\)</span>, and the reflected image is centered
+by <strong>rotating the platform clockwise</strong>. Since the new
+incident angle is <span class="math inline">\(50^0 \hspace{3pt}
+0&#39;\)</span>, the platform should be rotated by <span
+class="math inline">\(5^0 \hspace{3pt} 0&#39;\)</span>. Hence, the
+straight through position is now <span class="math inline">\(5^0
+\hspace{3pt} 0&#39;\)</span>. Thus, the correct deviation is not <span
+class="math inline">\(|T-T_0|\)</span>, but <span
+class="math inline">\(|T-T_0| + 5^0 \hspace{3pt}
+0&#39;\)</span>..</p></li>
+<li><p>Since this affected all of the data except <span
+class="math inline">\(\theta=90^0\)</span>, the proper value is provided
+by the following equation:</p>
+<p><span class="math display">\[D_{n,\text{corrected}} = D_{n} + (2^0
+\hspace{3pt} 30&#39;) \cdot (n-1)\]</span></p>
+<p>Here <span class="math inline">\(n=1,2,3,4,5,6\)</span></p></li>
+<li><p>The corrected values for D are given below.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>i</strong></th>
+<th style="text-align: center;"><strong><span class="math inline">\(D
+\hspace{3pt}(\pm \hspace{3pt}0.5&#39;)\)</span></strong></th>
+<th style="text-align: center;"><strong>correction</strong></th>
+<th style="text-align: center;"><strong>Corrected value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(45^\circ
+\hspace{3pt}0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(39^\circ
+\hspace{3pt} 0.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^\circ
+\hspace{3pt} 0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(39^\circ
+\hspace{3pt} 0.5&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(47^\circ
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(36^\circ
+\hspace{3pt} 24.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^\circ
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(38^\circ
+\hspace{3pt} 54.5&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(50^\circ
+\hspace{3pt} 0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(33^\circ
+\hspace{3pt} 50.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5^\circ
+\hspace{3pt} 0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(38^\circ
+\hspace{3pt} 50.0&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(52^\circ
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(31^\circ
+\hspace{3pt} 28.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7^0
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(38^\circ
+\hspace{3pt} 58.0&#39;\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(55^\circ
+\hspace{3pt} 0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(29^\circ
+\hspace{3pt} 12.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10^0
+\hspace{3pt} 0.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(39^\circ
+\hspace{3pt} 12.5&#39;\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(57^\circ
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(26^\circ
+\hspace{3pt} 20.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(12^0
+\hspace{3pt} 30.0&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(38^\circ
+\hspace{3pt} 50.5&#39;\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<figure>
+<img src="graph2.jpg" alt="The D-i graph for the corrected data " />
+<figcaption aria-hidden="true">The <span
+class="math inline">\(D-i\)</span> graph for the corrected data
+</figcaption>
+</figure>
+<h4
+id="then-the-angle-of-minimum-deviation-and-its-uncertainty-as-read-from-the-graph">Then
+the angle of minimum deviation and its uncertainty as read from the
+graph</h4>
+<p><span class="math inline">\(38^\circ \hspace{3pt} 50&#39; \pm
+0.5&#39;\)</span></p>
+<h2 id="experiment-02-7">Experiment 02</h2>
+<h4 id="angles-theta_colour-of-spectral-lines">Angles (<span
+class="math inline">\(\theta_{colour}\)</span>) of spectral lines :</h4>
+<p>The following table allows to compare obtained angles and theoretical
+angle for <span class="math inline">\(n=1\)</span> and grating constant
+of 600.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Spectral Line</strong></th>
+<th style="text-align: center;"><strong><span
+class="math inline">\(\theta_{color} \hspace{3pt}(\pm
+\hspace{3pt}0.5&#39;)\)</span></strong></th>
+<th style="text-align: center;"><strong>Expected value</strong></th>
+<th style="text-align: center;"><strong>Deviation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Violet <span
+class="math inline">\((T_1)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15^\circ
+\hspace{3pt} 16.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15^\circ
+\hspace{3pt} 10&#39;\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0.73\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Green <span
+class="math inline">\((T_2)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19^\circ
+\hspace{3pt} 16.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19^\circ
+\hspace{3pt} 7&#39;\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0.79\%\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Yellow 1 <span
+class="math inline">\((T_3)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^\circ
+\hspace{3pt} 16.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^\circ
+\hspace{3pt} 15&#39;\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0.1\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Yellow 2 <span
+class="math inline">\((T_4)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^\circ
+\hspace{3pt} 29.5&#39;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20^0
+\hspace{3pt} 20&#39;\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0.8\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Since deviations are reasonably low, all the values for <span
+class="math inline">\(\theta_{colour}\)</span> can be considered
+acceptable.</p>
+<h4 id="grating-constantn">Grating constant(<span
+class="math inline">\(N\)</span>) :</h4>
+<p>The grating constant of the subjected diffraction grating is 600
+lines per millimeter. The experimental value is <span
+class="math inline">\(604 \pm 1 \hspace{3pt}mm^{-1}\)</span>. Hence the
+deviation from the theoretical value, <span
+class="math display">\[\begin{aligned}
+    &amp;= \frac{604 - 600}{600} \times 100 \% \\
+    &amp;= 0.67 \hspace{3pt} \%
+\end{aligned}\]</span> Thus the experimental value is acceptable.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>The first experiment aimed to determine the index of refraction of a
+prism. This was achieved by measuring the prism’s angle and the angle of
+minimum deviation. The prism angle was found to be <span
+class="math inline">\(60^0 \hspace{3pt} 1.5&#39; \pm 0.3&#39;\)</span>.
+However, the <span class="math inline">\(D-i\)</span> curve did not
+yield the expected results due to technical errors. Instead, the angle
+of minimum deviation was measured to be <span class="math inline">\(38^0
+\hspace{3pt} 40.0&#39; \pm 0.5&#39;\)</span> degrees by the indirect
+method. Based on these measurements, the computed index of refraction of
+the prism was calculated to be <span class="math inline">\(1.5167
+\hspace{3pt} \pm 0.0001\)</span>.<br />
+<br />
+The second experiment aimed to determine the grating constant of a
+certain diffraction grating. It was determined based on the atomic
+spectra of mercury (Hg). The spectrometer was used to measure the
+grating-induced variations in the primary spectral lines violet (436
+nm), green (546 nm), and yellow 1 (577 nm) and yellow 2 (579 nm). The
+calculated value for the grating was <span class="math inline">\(604 \pm
+1 mm^{-1}\)</span>, whereas the actual value was <span
+class="math inline">\(600 mm^{-1}\)</span>.</p>
+</body>
+</html>

@@ -36,7 +36,7 @@ const BlogCard = ({
   const time = generateTime(date);
 
   return (
-    <Link href={`/posts/${slug}`}>
+    <Link href={`/articles/${slug}`}>
       <Card className="py-4 w-[300px] hover:ring-1 duration-400 ring-s2 dark:bg-fg  rounded-sm shadow-xl shado-[#242527]">
         <CardHeader className="pb-0 pt-2 px-4 h-[120px] flex-col items-start">
           <p className="text-tiny uppercase font-bold">{time}</p>

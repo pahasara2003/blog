@@ -24,7 +24,7 @@ const Page = async (Url: any) => {
   const date = generateMonth(data?.date);
 
   const D = await fetch(
-    "http://localhost:3000/posts/p5js/double_pendulum.html"
+    "http://pahasara.byte-burst.xyz/articles/spectrometer.html"
   ).then((res) => res.text());
 
   const cleanHTML = removeStyles(D);
@@ -32,11 +32,11 @@ const Page = async (Url: any) => {
   console.log(data);
 
   return (
-    <div className="bg-white m-5 mx-10">
+    <div className="bg-white m-5 md:mx-[10vw] lg:mx-[15vw] mx-0">
       <BlogHeader data={data} date={date} />
       <div
         dangerouslySetInnerHTML={{ __html: cleanHTML }}
-        className=" text-[2rem] font-serif max-w-[60rem] m-auto "
+        className=" text-[1rem] font-serif max-w-[90%] m-auto "
       ></div>
     </div>
   );

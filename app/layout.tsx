@@ -22,17 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Website",
-            name: "Pahasara's Blog",
-            datePublished: "2024-10-02",
-            url: "https://pahasara.byte-burst.xyz",
-          })}
-        </script>
-      </head>
+      <head></head>
       <body className={`bg-bg`}>
         {children}
         <footer className=" py-5  w-[100%]  bg-bg text-white text-[1rem] text-center">
