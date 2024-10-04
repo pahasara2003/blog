@@ -1,5 +1,5 @@
 "use client";
-import BlogCard from "./Card";
+import ArticleListElement from "./ArticleListElement";
 import { NextUIProvider } from "@nextui-org/react";
 import crypto from "crypto";
 
@@ -25,15 +25,14 @@ const RecentPosts = ({ postMetaData }: Props) => {
   return (
     <NextUIProvider>
       <div className="flex justify-center pb-10 gap-2 items-center"></div>
-      <h1 className="text-[2rem] px-10 py-3 font-bold tracking-widest">
+      <h1 className="text-[2rem] bg-s2 text-white px-10 py-3 font-bold tracking-widest">
         Recent Posts
       </h1>
-      <hr />
       <div className="w-full flex py-5 min-h-[50vh] flex-col items-center">
-        <div className="justify-center flex w-[100%] flex-wrap gap-5">
+        <div className="justify-center lg:flex w-[100%] lg:flex-wrap gap-3">
           {postMetaData.map((post) => {
             return (
-              <BlogCard
+              <ArticleListElement
                 key={crypto.randomBytes(10).toString("hex")}
                 {...post}
               />

@@ -13,13 +13,13 @@ export async function generateMetadata(Url: any): Promise<Metadata> {
 
   // fetch data
   const data = await prisma.posts.findFirst({
-    where: { slug: Url.params.title },
+    where: { slug: decodeURIComponent(Url.params.title) },
   });
 
   prisma.$disconnect();
 
   return {
-    title: `${data?.title} | Pahasara's Blog`,
+    title: data?.title,
   };
 }
 export default function RootLayout({

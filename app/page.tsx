@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <section className="bg-fg p-3">
       <LandingPage />
-      {/* <BlogPanel /> */}
+      <BlogPanel />
     </section>
   );
 };

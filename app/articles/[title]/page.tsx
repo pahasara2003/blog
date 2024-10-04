@@ -2,7 +2,7 @@ import { generateMonth } from "@/components/generateTime";
 import BlogHeader from "@/components/BlogHeader";
 import { PrismaClient } from "prisma/prisma-client";
 import "../../blog.css";
-
+import ArticlePageRetatedPosts from "@/components/ArticlePageRelatedPosts";
 const prisma = new PrismaClient();
 
 const removeStyles = (html: string) => {
@@ -16,8 +16,9 @@ const removeStyles = (html: string) => {
 };
 const Page = async (Url: any) => {
   const data = await prisma.posts.findFirst({
-    where: { slug: Url.params.title },
+    where: { slug: decodeURIComponent(Url.params.title) },
   });
+  console.log(decodeURIComponent(Url.params.title));
 
   prisma.$disconnect();
 
@@ -29,15 +30,16 @@ const Page = async (Url: any) => {
 
   const cleanHTML = removeStyles(D);
 
-  console.log(data);
-
   return (
-    <div className="bg-white m-5 md:mx-[10vw] lg:mx-[15vw] mx-0">
-      <BlogHeader data={data} date={date} />
-      <div
-        dangerouslySetInnerHTML={{ __html: cleanHTML }}
-        className=" text-[1rem] font-serif max-w-[90%] m-auto "
-      ></div>
+    <div className="flex  gap-5 justify-center ">
+      <div className="bg-white m-5 md:mx-[10vw] lg:mx-[0vw] mx-0">
+        <BlogHeader data={data} date={date} />
+        <div
+          dangerouslySetInnerHTML={{ __html: cleanHTML }}
+          className=" text-[1rem] xl:px-10 font-serif overflow-x-clip max-w-[75vw] px-3 m-auto "
+        ></div>
+      </div>
+      <ArticlePageRetatedPosts />
     </div>
   );
 };
