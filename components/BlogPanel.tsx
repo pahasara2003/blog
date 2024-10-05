@@ -12,7 +12,7 @@ const BlogPanel = async () => {
     .slice(0, 4);
 
   return (
-    <div className="p-10 w-[100%] mt-4 shadow-lg shadow-bg bg-white ">
+    <div className="p-10 w-[100%] mt-4 shadow-lg shadow-bg bg-light ">
       <RecentPosts postMetaData={postMetaData} />
     </div>
   );

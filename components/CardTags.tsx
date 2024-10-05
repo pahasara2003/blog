@@ -14,11 +14,7 @@ const CardTags = ({ tags }: props) => {
   return (
     <div className="flex  w-full justify-between">
       {tags.slice(0, 3).map((t) => {
-        return (
-          <>
-            <Icon {...t} key={Math.random()} />
-          </>
-        );
+        return <Icon {...t} key={Math.random()} />;
       })}
     </div>
   );

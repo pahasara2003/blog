@@ -16,6 +16,11 @@ const removeStyles = (html: string) => {
   return html;
 };
 
+export async function generateStaticParams() {
+  let postMetaData = await prisma.posts.findMany();
+  return postMetaData.map((post) => post.title);
+}
+
 export async function generateMetadata(Url: any): Promise<Metadata> {
   const data = await prisma.posts.findFirst({
     where: { slug: decodeURIComponent(Url.params.title) },
