@@ -16,16 +16,16 @@ const BlogHeader = ({ data, date }: any) => {
     <div className="w-[80vw] m-auto xl:w-[60vw]   pt-5">
       <div>
         <Breadcrumbs isDisabled size="lg" className="px-2 font-bold py-3">
-          {data.file.split("/").map((e: any, index: any) => {
-            if (data.file.split("/").length > index + 1) {
+          {data?.file.split("/").map((e: any, index: any) => {
+            if (data?.file.split("/").length > index + 1) {
               return <BreadcrumbItem key={index}>{e}</BreadcrumbItem>;
             }
           })}
         </Breadcrumbs>
         <Image
-          alt={data.title}
+          alt={data?.title}
           className=" rounded-md  w-[80vw] xl:w-[60vw]  h-[300px] object-cover"
-          src={`https://pahasara.byte-burst.xyz/${data.thumbnail}`}
+          src={`https://pahasara.byte-burst.xyz/${data?.thumbnail}`}
         />{" "}
         <h1 className="font-Headers pt-5 px-2 m-0 bg-clip-text text-transparent bg-gradient-to-r from-s1 to-s2  text-[2rem] sm:text-[3rem] ">
           {data?.title}

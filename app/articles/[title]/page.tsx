@@ -1,7 +1,6 @@
 import { generateMonth } from "@/components/generateTime";
 import BlogHeader from "@/components/BlogHeader";
 import { PrismaClient } from "prisma/prisma-client";
-import "../../blog.css";
 import ArticlePageRetatedPosts from "@/components/ArticlePageRelatedPosts";
 import type { Metadata } from "next";
 
@@ -18,9 +17,6 @@ const removeStyles = (html: string) => {
 };
 
 export async function generateMetadata(Url: any): Promise<Metadata> {
-  // read route params
-
-  // fetch data
   const data = await prisma.posts.findFirst({
     where: { slug: decodeURIComponent(Url.params.title) },
   });
@@ -36,7 +32,7 @@ const Page = async (Url: any) => {
   const data = await prisma.posts.findFirst({
     where: { slug: decodeURIComponent(Url.params.title) },
   });
-  console.log(decodeURIComponent(Url.params.title));
+  let postMetaData = await prisma.posts.findMany();
 
   prisma.$disconnect();
 
@@ -52,12 +48,12 @@ const Page = async (Url: any) => {
     <div className="flex  gap-5 justify-center ">
       <div className="bg-white m-5 md:mx-[10vw] lg:mx-[0vw] mx-0">
         <BlogHeader data={data} date={date} />
-        {/* <div
+        <div
           dangerouslySetInnerHTML={{ __html: cleanHTML }}
           className=" text-[1rem] xl:px-10 font-serif overflow-x-clip max-w-[75vw] px-3 m-auto "
-        ></div> */}
+        ></div>
       </div>
-      <ArticlePageRetatedPosts />
+      <ArticlePageRetatedPosts postMetaData={postMetaData} />
     </div>
   );
 };

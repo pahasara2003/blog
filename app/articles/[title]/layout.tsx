@@ -8,20 +8,6 @@ type Props = {
 
 const prisma = new PrismaClient();
 
-export async function generateMetadata(Url: any): Promise<Metadata> {
-  // read route params
-
-  // fetch data
-  const data = await prisma.posts.findFirst({
-    where: { slug: decodeURIComponent(Url.params.title) },
-  });
-
-  prisma.$disconnect();
-
-  return {
-    title: data?.title,
-  };
-}
 export default function RootLayout({
   children,
 }: {

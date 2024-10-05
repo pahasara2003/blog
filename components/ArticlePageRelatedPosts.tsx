@@ -56,14 +56,12 @@ const ArticleListElement = ({
   );
 };
 
-const prisma = new PrismaClient();
-
-const ArticlePageRetatedPosts = async () => {
-  let postMetaData = await prisma.posts.findMany();
-  prisma.$disconnect();
-
+const ArticlePageRetatedPosts = async ({ postMetaData }: any) => {
   postMetaData = postMetaData
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort(
+      (a: any, b: any) =>
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    )
     .slice(0, 5);
   return (
     <div className="px-5 max-xl:hidden sticky top-0 h-screen pt-5 gap-2 bg-light items-center">
@@ -73,7 +71,7 @@ const ArticlePageRetatedPosts = async () => {
       <hr />
       <div className="w-full flex py-5 min-h-[50vh] flex-col items-center">
         <div className=" w-[100%] flex-wrap gap-3">
-          {postMetaData.map((post) => {
+          {postMetaData.map((post: any) => {
             return (
               <ArticleListElement
                 key={crypto.randomBytes(10).toString("hex")}

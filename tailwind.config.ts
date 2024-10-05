@@ -82,7 +82,6 @@ const config: Config = {
       },
     }),
     require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
   ],
 };
 export default config;

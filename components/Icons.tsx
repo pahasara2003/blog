@@ -12,7 +12,7 @@ const Icon = ({ tag, text }: props) => {
     <div className="flex gap-1 h-full items-center">
       <Image
         alt={text}
-        src={`/icons/${tag}.png`}
+        src={`/icons/${tag}.webp`}
         className="rounded-none w-[20px] md:w-[20px] "
       />
       <span className="text-sm  tracking-widest dark:text-white">{text}</span>
